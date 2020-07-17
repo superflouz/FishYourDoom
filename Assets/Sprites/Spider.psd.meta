@@ -1,187 +1,151 @@
 fileFormatVersion: 2
-guid: 0ea5fd1d7b51c2d40adb1b0180cf0be9
+guid: b78720764047b1042a27b24cf11bda51
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 771468318889402829
-    second: MartinLePecheur_0
+      213: -3438905571476058607
+    second: Spider_0
   - first:
-      213: 1066196973301128553
-    second: MartinLePecheur_1
+      213: -3439666431560065214
+    second: Spider_1
   - first:
-      213: -4629607274120158199
-    second: MartinLePecheur_2
+      213: 594067532846947361
+    second: Spider_2
   - first:
-      213: -6319862712892170733
-    second: MartinLePecheur_3
+      213: -8157787870349292481
+    second: Spider_3
   - first:
-      213: 1649901406787012858
-    second: MartinLePecheur_4
+      213: 8989802596421927958
+    second: Spider_4
   - first:
-      213: -1347742090365993421
-    second: MartinLePecheur_5
+      213: 8102673786920169266
+    second: Spider_5
   - first:
-      213: 2869594682597628523
-    second: MartinLePecheur_6
+      213: -6725166634347724402
+    second: Spider_6
   - first:
-      213: -8848127894732581606
-    second: MartinLePecheur_7
+      213: 905633704357905193
+    second: Spider_7
   - first:
-      213: 7397591791221139346
-    second: MartinLePecheur_8
+      213: -7303839196576682541
+    second: Spider_8
   - first:
-      213: 1800419005452157993
-    second: MartinLePecheur_9
+      213: -8230967131063585693
+    second: Spider_9
   - first:
-      213: 4329000734741975600
-    second: MartinLePecheur_10
+      213: -4664177610714319100
+    second: Spider_10
   - first:
-      213: -7807120359109438637
-    second: MartinLePecheur_11
+      213: -2579439709614669524
+    second: Spider_11
   - first:
-      213: 3925042510554328299
-    second: MartinLePecheur_12
+      213: -7417519134994244642
+    second: Spider_12
   - first:
-      213: -997273438845731684
-    second: MartinLePecheur_13
+      213: -5096414888165297901
+    second: Spider_13
   - first:
-      213: -1064087926849745676
-    second: MartinLePecheur_14
+      213: 5591140174580741523
+    second: Spider_14
   - first:
-      213: 6707232893887368895
-    second: MartinLePecheur_15
+      213: -734628333720202603
+    second: Spider_15
   - first:
-      213: -2311659948842064771
-    second: Player_0
+      213: 8578996721653216493
+    second: Spider_16
   - first:
-      213: 7364682651488144517
-    second: Player_1
+      213: -1767455391259168476
+    second: Spider_17
   - first:
-      213: -6287787046888575383
-    second: Player_2
+      213: -3124533901180705053
+    second: Spider_18
   - first:
-      213: -1182821291677670348
-    second: Player_3
+      213: 1027643729196822211
+    second: Spider_19
   - first:
-      213: -4709456396536258026
-    second: Player_4
+      213: 3137174164971784666
+    second: Spider_20
   - first:
-      213: -4529042392078601758
-    second: Player_5
+      213: -3949082360913780034
+    second: Spider_21
   - first:
-      213: -7446026091647042388
-    second: Player_6
+      213: -6064306032806190762
+    second: Spider_22
   - first:
-      213: 5938012242645255967
-    second: Player_7
+      213: -5551218195724096304
+    second: Spider_23
   - first:
-      213: -4245738604243887485
-    second: Player_8
+      213: -2423098700649861297
+    second: Spider_0
   - first:
-      213: 2473453845335418800
-    second: Player_9
+      213: -9151289536139062695
+    second: Spider_1
   - first:
-      213: -3287367053296241113
-    second: Player_10
+      213: -2055468633987690263
+    second: Spider_2
   - first:
-      213: -5319882733741912588
-    second: Player_11
+      213: 5929118560623950706
+    second: Spider_3
   - first:
-      213: 7365574002475698461
-    second: Player_12
+      213: -4022054039127368990
+    second: Spider_4
   - first:
-      213: 6472545519820947264
-    second: Player_13
+      213: 9074306534765223777
+    second: Spider_5
   - first:
-      213: -2472340072831945791
-    second: Player_14
+      213: 5755670240742289430
+    second: Spider_6
   - first:
-      213: 4681514556078180949
-    second: Player_15
+      213: -7474160789284400135
+    second: Spider_7
   - first:
-      213: -7584956380549873370
-    second: Player_0
+      213: -3449531887184721470
+    second: Spider_8
   - first:
-      213: 6651041511453414704
-    second: Player_1
+      213: -8032826548910491125
+    second: Spider_9
   - first:
-      213: 8654590631379428793
-    second: Player_2
+      213: 9052327009507547230
+    second: Spider_10
   - first:
-      213: 2104903475122899212
-    second: Player_3
+      213: -787777896287082923
+    second: Spider_11
   - first:
-      213: 1550346661786639224
-    second: Player_4
+      213: 4949640546441963451
+    second: Spider_12
   - first:
-      213: -2137104641423072030
-    second: Player_5
+      213: 87403432753330335
+    second: Spider_13
   - first:
-      213: -2913840584061128028
-    second: Player_6
+      213: 4677306901826344207
+    second: Spider_14
   - first:
-      213: -1314552440241993024
-    second: Player_7
+      213: -4798200775582957236
+    second: Spider_15
   - first:
-      213: -4547419369343004713
-    second: Player_8
+      213: -1843635398394226724
+    second: Spider_16
   - first:
-      213: 1926431759985454781
-    second: Player_9
+      213: 6812638130779881684
+    second: Spider_17
   - first:
-      213: 8845860978411747880
-    second: Player_10
+      213: -3138124326383639640
+    second: Spider_18
   - first:
-      213: 5020063464885657153
-    second: Player_11
+      213: -9005296773700111657
+    second: Spider_19
   - first:
-      213: -243200315932935934
-    second: Player_12
+      213: -2444015574131134750
+    second: Spider_20
   - first:
-      213: -4313251689483030608
-    second: Player_13
+      213: -9037782941948267855
+    second: Spider_21
   - first:
-      213: -4505285933258290438
-    second: Player_14
+      213: 1673174580695318089
+    second: Spider_22
   - first:
-      213: 2612308798325950364
-    second: Player_15
-  - first:
-      213: -2521826894279438384
-    second: Player_16
-  - first:
-      213: -7338765713033929952
-    second: Player_17
-  - first:
-      213: 1522305984107872113
-    second: Player_18
-  - first:
-      213: -661973496601677656
-    second: Player_19
-  - first:
-      213: -5989208844104669019
-    second: Player_20
-  - first:
-      213: -620360788158790383
-    second: Player_21
-  - first:
-      213: 5007636379019871947
-    second: Player_22
-  - first:
-      213: 585951966842662488
-    second: Player_23
-  - first:
-      213: -5324252115843577105
-    second: Player_24
-  - first:
-      213: 802321206317977270
-    second: Player_25
-  - first:
-      213: -2531074035140014093
-    second: Player_26
-  - first:
-      213: 2425571995158539275
-    second: Player_27
+      213: 2034559098954149689
+    second: Spider_23
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -267,589 +231,505 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Player_0
+      name: Spider_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 775
+        y: 32
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6210e74db52dcb690800000000000000
-      internalID: -7584956380549873370
+      spriteID: f4fed04e19c6f5ed0800000000000000
+      internalID: -2423098700649861297
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_1
+      name: Spider_1
       rect:
         serializedVersion: 2
         x: 32
-        y: 775
+        y: 32
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 035de84140f3d4c50800000000000000
-      internalID: 6651041511453414704
+      spriteID: 9529ea907a6100180800000000000000
+      internalID: -9151289536139062695
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_2
+      name: Spider_2
       rect:
         serializedVersion: 2
         x: 64
-        y: 775
+        y: 32
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9b56bc343584b1870800000000000000
-      internalID: 8654590631379428793
+      spriteID: 9e0d430fa228973e0800000000000000
+      internalID: -2055468633987690263
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_3
+      name: Spider_3
       rect:
         serializedVersion: 2
         x: 96
-        y: 775
+        y: 32
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c098f21fe8e163d10800000000000000
-      internalID: 2104903475122899212
+      spriteID: 27b7a25cae5784250800000000000000
+      internalID: 5929118560623950706
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_4
+      name: Spider_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 32
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ea5362492bce28c0800000000000000
+      internalID: -4022054039127368990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 32
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16fdfa337b96eed70800000000000000
+      internalID: 9074306534765223777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 32
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6103bbfc69f30ef40800000000000000
+      internalID: 5755670240742289430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider_7
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 32
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f3dc88ac52764890800000000000000
+      internalID: -7474160789284400135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider_8
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 32
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c9c8f6660dc020d0800000000000000
+      internalID: -3449531887184721470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider_9
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 32
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0afcd140daa58090800000000000000
+      internalID: -8032826548910491125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider_10
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 32
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e581f50347350ad70800000000000000
+      internalID: 9052327009507547230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider_11
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 32
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55667e95d204115f0800000000000000
+      internalID: -787777896287082923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider_12
       rect:
         serializedVersion: 2
         x: 0
-        y: 743
+        y: 0
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 87b51862310f38510800000000000000
-      internalID: 1550346661786639224
+      spriteID: bb72b884ad7a0b440800000000000000
+      internalID: 4949640546441963451
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_5
+      name: Spider_13
       rect:
         serializedVersion: 2
         x: 32
-        y: 743
+        y: 0
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2e4a328c6aa7752e0800000000000000
-      internalID: -2137104641423072030
+      spriteID: f98796185f4863100800000000000000
+      internalID: 87403432753330335
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_6
+      name: Spider_14
       rect:
         serializedVersion: 2
         x: 64
-        y: 743
+        y: 0
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4a27bee4d65ff87d0800000000000000
-      internalID: -2913840584061128028
+      spriteID: f0597d488d129e040800000000000000
+      internalID: 4677306901826344207
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_7
+      name: Spider_15
       rect:
         serializedVersion: 2
-        x: 0
-        y: 711
+        x: 96
+        y: 0
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0cac0c83585c1cde0800000000000000
-      internalID: -1314552440241993024
+      spriteID: c41cf5a01dd596db0800000000000000
+      internalID: -4798200775582957236
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_8
+      name: Spider_16
       rect:
         serializedVersion: 2
-        x: 32
-        y: 711
+        x: 128
+        y: 0
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7df44954d2254e0c0800000000000000
-      internalID: -4547419369343004713
+      spriteID: cd750678f571a66e0800000000000000
+      internalID: -1843635398394226724
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_9
+      name: Spider_17
       rect:
         serializedVersion: 2
-        x: 64
-        y: 711
+        x: 160
+        y: 0
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dbea6f1aa7f0cba10800000000000000
-      internalID: 1926431759985454781
+      spriteID: 4d08a68f84a5b8e50800000000000000
+      internalID: 6812638130779881684
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_10
+      name: Spider_18
       rect:
         serializedVersion: 2
-        x: 0
-        y: 679
+        x: 192
+        y: 0
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 82ab8b641bfc2ca70800000000000000
-      internalID: 8845860978411747880
+      spriteID: 8a324e83d842374d0800000000000000
+      internalID: -3138124326383639640
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_11
+      name: Spider_19
       rect:
         serializedVersion: 2
-        x: 32
-        y: 679
+        x: 224
+        y: 0
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 14e1d66bf19daa540800000000000000
-      internalID: 5020063464885657153
+      spriteID: 7d232a2eb42c60380800000000000000
+      internalID: -9005296773700111657
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_12
+      name: Spider_20
       rect:
         serializedVersion: 2
-        x: 64
-        y: 679
+        x: 256
+        y: 0
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 209fd87e99aff9cf0800000000000000
-      internalID: -243200315932935934
+      spriteID: 2ee2466c8cc151ed0800000000000000
+      internalID: -2444015574131134750
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_13
+      name: Spider_21
       rect:
         serializedVersion: 2
-        x: 0
-        y: 647
+        x: 288
+        y: 0
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0bfa285e0704424c0800000000000000
-      internalID: -4313251689483030608
+      spriteID: 1b2b61c6c48539280800000000000000
+      internalID: -9037782941948267855
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_14
+      name: Spider_22
       rect:
         serializedVersion: 2
-        x: 32
-        y: 647
+        x: 320
+        y: 0
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: afa439050520a71c0800000000000000
-      internalID: -4505285933258290438
+      spriteID: 94ebe819a6f483710800000000000000
+      internalID: 1673174580695318089
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_15
+      name: Spider_23
       rect:
         serializedVersion: 2
-        x: 64
-        y: 647
+        x: 352
+        y: 0
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c9788dfe209c04420800000000000000
-      internalID: 2612308798325950364
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_16
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 615
-        width: 32
-        height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0df82750dcba00dd0800000000000000
-      internalID: -2521826894279438384
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_17
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 615
-        width: 32
-        height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 02bdbc86777772a90800000000000000
-      internalID: -7338765713033929952
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_18
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 615
-        width: 32
-        height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 17f733e1a31502510800000000000000
-      internalID: 1522305984107872113
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_19
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 583
-        width: 32
-        height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8a07554bc9230d6f0800000000000000
-      internalID: -661973496601677656
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_20
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 583
-        width: 32
-        height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5a86389d94e02eca0800000000000000
-      internalID: -5989208844104669019
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_21
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 583
-        width: 32
-        height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 115c63566290467f0800000000000000
-      internalID: -620360788158790383
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_22
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 551
-        width: 32
-        height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bc68dcf41c2be7540800000000000000
-      internalID: 5007636379019871947
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_23
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 551
-        width: 32
-        height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 85e29179538b12800800000000000000
-      internalID: 585951966842662488
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_24
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 551
-        width: 32
-        height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fea8584e8e47c16b0800000000000000
-      internalID: -5324252115843577105
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_25
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 519
-        width: 32
-        height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6be8852e2ea622b00800000000000000
-      internalID: 802321206317977270
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_26
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 519
-        width: 32
-        height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3ffc3434391dfdcd0800000000000000
-      internalID: -2531074035140014093
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_27
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 519
-        width: 32
-        height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b0c6f8cd0ec59a120800000000000000
-      internalID: 2425571995158539275
+      spriteID: 93f63bf88b43c3c10800000000000000
+      internalID: 2034559098954149689
       vertices: []
       indices: 
       edges: []
@@ -865,7 +745,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
   spritePackingTag: 
-  pSDRemoveMatte: 0
+  pSDRemoveMatte: 1
   pSDShowRemoveMatteOption: 1
   userData: 
   assetBundleName: 
