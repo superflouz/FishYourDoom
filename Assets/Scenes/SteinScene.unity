@@ -238,7 +238,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 611657941}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ddb80d2d8c02624188e7932122dc49d, type: 3}
+  m_Script: {fileID: 11500000, guid: 7afc37fffb2d40d40b9d1f399629413f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &611657943
@@ -253,7 +253,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: db1036ac37a7a8b44b16a63106d826e6,
+  m_Actions: {fileID: -944628639613478452, guid: ffc2a4d36488343418bedf6e21822be9,
     type: 3}
   m_NotificationBehavior: 0
   m_UIInputModule: {fileID: 0}
@@ -514,6 +514,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3365687262467639445, guid: cfe547f852b9fa444bea431f8312508f,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6396923745145147242, guid: cfe547f852b9fa444bea431f8312508f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6929284502228638685, guid: cfe547f852b9fa444bea431f8312508f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6929284502228638685, guid: cfe547f852b9fa444bea431f8312508f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -45
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cfe547f852b9fa444bea431f8312508f, type: 3}
