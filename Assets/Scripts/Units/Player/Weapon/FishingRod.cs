@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FishingRod : MonoBehaviour
+public class FishingRod : IWeapon
 {
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +16,15 @@ public class FishingRod : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public override void Attack()
+    {
+        
+    }
+
+    public override void SpecialAttack()
+    {
+
     }
 }
