@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
 {
     // Player components
     private Health health;
+    private Stats stats;
     private Animator animator;
     private Rigidbody2D body;
     
@@ -14,6 +15,7 @@ public class Player : MonoBehaviour
     {
         // Get components
         health = GetComponent<Health>();
+        stats = GetComponent<Stats>();
         body = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
     }
