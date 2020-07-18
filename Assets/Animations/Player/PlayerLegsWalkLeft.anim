@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PlayerWalkRight
+  m_Name: PlayerLegsWalkLeft
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -67,27 +67,27 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: 
+    path: Sprite
   m_FloatCurves: []
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: -5319882733741912588, guid: 0ea5fd1d7b51c2d40adb1b0180cf0be9,
-        type: 3}
-    - time: 0.15
-      value: {fileID: -3287367053296241113, guid: 0ea5fd1d7b51c2d40adb1b0180cf0be9,
-        type: 3}
-    - time: 0.3
       value: {fileID: 7365574002475698461, guid: 0ea5fd1d7b51c2d40adb1b0180cf0be9,
         type: 3}
-    - time: 0.45
-      value: {fileID: -3287367053296241113, guid: 0ea5fd1d7b51c2d40adb1b0180cf0be9,
-        type: 3}
-    - time: 0.6
+    - time: 0.15
       value: {fileID: -5319882733741912588, guid: 0ea5fd1d7b51c2d40adb1b0180cf0be9,
         type: 3}
+    - time: 0.3
+      value: {fileID: 6472545519820947264, guid: 0ea5fd1d7b51c2d40adb1b0180cf0be9,
+        type: 3}
+    - time: 0.45
+      value: {fileID: -5319882733741912588, guid: 0ea5fd1d7b51c2d40adb1b0180cf0be9,
+        type: 3}
+    - time: 0.6
+      value: {fileID: 7365574002475698461, guid: 0ea5fd1d7b51c2d40adb1b0180cf0be9,
+        type: 3}
     attribute: m_Sprite
-    path: 
+    path: Sprite/Legs
     classID: 212
     script: {fileID: 0}
   m_SampleRate: 20
@@ -98,25 +98,25 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 0
+      path: 850496168
       attribute: 3
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 0
+      path: 310525502
       attribute: 0
       script: {fileID: 0}
       typeID: 212
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: -5319882733741912588, guid: 0ea5fd1d7b51c2d40adb1b0180cf0be9, type: 3}
-    - {fileID: -3287367053296241113, guid: 0ea5fd1d7b51c2d40adb1b0180cf0be9, type: 3}
     - {fileID: 7365574002475698461, guid: 0ea5fd1d7b51c2d40adb1b0180cf0be9, type: 3}
-    - {fileID: -3287367053296241113, guid: 0ea5fd1d7b51c2d40adb1b0180cf0be9, type: 3}
     - {fileID: -5319882733741912588, guid: 0ea5fd1d7b51c2d40adb1b0180cf0be9, type: 3}
+    - {fileID: 6472545519820947264, guid: 0ea5fd1d7b51c2d40adb1b0180cf0be9, type: 3}
+    - {fileID: -5319882733741912588, guid: 0ea5fd1d7b51c2d40adb1b0180cf0be9, type: 3}
+    - {fileID: 7365574002475698461, guid: 0ea5fd1d7b51c2d40adb1b0180cf0be9, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
@@ -190,7 +190,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.x
-    path: 
+    path: Sprite
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -245,7 +245,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.y
-    path: 
+    path: Sprite
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -300,7 +300,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.z
-    path: 
+    path: Sprite
     classID: 4
     script: {fileID: 0}
   m_EulerEditorCurves: []
