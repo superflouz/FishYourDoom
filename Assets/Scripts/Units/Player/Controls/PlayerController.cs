@@ -106,9 +106,11 @@ public class PlayerController : MonoBehaviour
     {
         Vector3 direction = (Vector3)cursorLook - mainCam.WorldToScreenPoint(transform.position);
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        pivot.rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
+        pivot.rotation = Quaternion.AngleAxis(angle + 90, Vector3.forward);
 
-        float pivotAngle = pivot.eulerAngles.z;
+        float pivotAngle = 360 - pivot.eulerAngles.z;
+
+        Debug.Log(pivotAngle);
 
         if (pivotAngle >= 225 && pivotAngle <= 315) {animator.SetInteger("Angle", 270); }
         else if (pivotAngle > 135 && pivotAngle < 225) {animator.SetInteger("Angle", 180); }
