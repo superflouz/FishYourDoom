@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class FishingRod : IWeapon
 {
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -18,12 +16,12 @@ public class FishingRod : IWeapon
         
     }
 
-    public override void Attack()
+    public void Attack()
     {
         
     }
 
-    public override void SpecialAttack()
+    public void SpecialAttack()
     {
 
     }
