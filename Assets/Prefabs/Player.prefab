@@ -297,8 +297,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
-<<<<<<< HEAD
-=======
 --- !u!95 &2673457669703180450
 Animator:
   serializedVersion: 3
@@ -349,4 +347,3 @@ Transform:
   m_Father: {fileID: 2661632752076957573}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
->>>>>>> c6bcb19f6724c137c23a3dcac9f5343936e20c82
