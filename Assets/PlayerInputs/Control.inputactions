@@ -60,6 +60,14 @@
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "Dodge",
+                    "type": "Button",
+                    "id": "2e1152b0-41d2-4fa6-be63-d8178ad7410f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -77,7 +85,7 @@
                 {
                     "name": "",
                     "id": "c2f26244-6a9f-406e-8bdb-69db0c8abf11",
-                    "path": "<Gamepad>/buttonSouth",
+                    "path": "<Gamepad>/buttonNorth",
                     "interactions": "",
                     "processors": "",
                     "groups": "Default",
@@ -252,6 +260,17 @@
                 },
                 {
                     "name": "",
+                    "id": "1c82a2cf-bbb3-4b8e-aa77-6ddf8aa56812",
+                    "path": "<Gamepad>/dpad/y",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Default",
+                    "action": "Scroll",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "ede3a359-7879-4724-8d70-44397a709552",
                     "path": "<Keyboard>/e",
                     "interactions": "",
@@ -280,6 +299,28 @@
                     "processors": "",
                     "groups": "Default",
                     "action": "Look",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7c5916cb-63c5-4130-bd30-4553228a53cf",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Dodge",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "36138860-bb4f-4db7-9fd0-dc555e58fd0a",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Default",
+                    "action": "Dodge",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -110,10 +110,10 @@ public class PlayerController : MonoBehaviour
 
         float pivotAngle = pivot.eulerAngles.z;
 
-        if (pivotAngle >= 225 && pivotAngle <= 315) { /* looking right */ animator.SetInteger("Angle", 270); }
-        else if (pivotAngle > 135 && pivotAngle < 225) { /* looking down */ animator.SetInteger("Angle", 180); }
-        else if (pivotAngle >= 45 && pivotAngle <= 135) { /* looking left */ animator.SetInteger("Angle", 90); }
-        else if (pivotAngle > 315 || pivotAngle < 45) { /* looking up */ animator.SetInteger("Angle", 0); }
+        if (pivotAngle >= 225 && pivotAngle <= 315) {animator.SetInteger("Angle", 270); }
+        else if (pivotAngle > 135 && pivotAngle < 225) {animator.SetInteger("Angle", 180); }
+        else if (pivotAngle >= 45 && pivotAngle <= 135) {animator.SetInteger("Angle", 90); }
+        else if (pivotAngle > 315 || pivotAngle < 45) {animator.SetInteger("Angle", 0); }
     }
 
     private void SwitchWeapon()

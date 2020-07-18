@@ -5,6 +5,7 @@ using UnityEngine;
 public class Stats : MonoBehaviour
 {
     #region Events
+
     // Attack
     public delegate void OnDamageGain();
     public OnDamageGain onDamageGain;
