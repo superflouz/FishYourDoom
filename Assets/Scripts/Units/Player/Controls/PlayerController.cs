@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D body;  
     private Vector2 moveInput;
     private Vector2 currentVelocity;
+    private Vector2 cursorLook;
+    private Camera mainCam;
 
     // Movement variables
     public float speed = 5;
@@ -23,6 +25,7 @@ public class PlayerController : MonoBehaviour
     {
         // Get components
         body = GetComponent<Rigidbody2D>();
+        mainCam = Camera.main;
     }
 
     void Start()
@@ -37,7 +40,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        
+        RotateTowardsCursor();
     }
 
     // Fired by InputSystem
@@ -82,6 +85,12 @@ public class PlayerController : MonoBehaviour
             moveInput = Vector2.zero;     
     }
 
+    // Fired by InputSystem
+    public void OnLook(InputValue value)
+    {
+        cursorLook = value.Get<Vector2>();
+    }
+
     // Move the character
     private void Move(Vector2 direction)
     {
@@ -89,17 +98,17 @@ public class PlayerController : MonoBehaviour
         Vector2 velocity = Vector2.MoveTowards(body.velocity, moveInput * speed, acceleration * Time.fixedDeltaTime);
         body.velocity = velocity;
 
-        // Rotation
-        if (body.velocity.magnitude > 0)
-        {
-            float angle = Mathf.Atan2(body.velocity.x, body.velocity.y) * Mathf.Rad2Deg;
-            pivot.rotation = (Quaternion.RotateTowards(pivot.rotation, Quaternion.AngleAxis(angle, Vector3.back), 3600 * Time.fixedDeltaTime));         
-        }
+        animator.SetFloat("Speed", moveInput.magnitude);       
+    }
 
-        animator.SetFloat("Speed", moveInput.magnitude);
+    // Rotates the character
+    private void RotateTowardsCursor()
+    {
+        Vector3 direction = (Vector3)cursorLook - mainCam.WorldToScreenPoint(transform.position);
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        pivot.rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
 
         float pivotAngle = pivot.eulerAngles.z;
-        Debug.Log(pivotAngle);
 
         if (pivotAngle >= 225 && pivotAngle <= 315) { /* looking right */ animator.SetInteger("Angle", 270); }
         else if (pivotAngle > 135 && pivotAngle < 225) { /* looking down */ animator.SetInteger("Angle", 180); }
