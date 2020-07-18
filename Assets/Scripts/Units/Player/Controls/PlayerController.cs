@@ -98,6 +98,22 @@ public class PlayerController : MonoBehaviour
         Vector2 velocity = Vector2.MoveTowards(body.velocity, moveInput * speed, acceleration * Time.fixedDeltaTime);
         body.velocity = velocity;
 
+        // Rotate legs toward movemement if it's not 180 deg
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        angle += 90;
+        float pivotAngle = pivot.eulerAngles.z;
+        if (Mathf.Abs(angle - pivotAngle) > 135 && Mathf.Abs(angle - pivotAngle) < 225)
+            angle = pivotAngle;
+
+        if (angle >= 225 && angle <= 315)
+        { animator.SetInteger("Angle Movement", 270); }
+        else if (angle > 135 && angle < 225)
+        { animator.SetInteger("Angle Movement", 180); }
+        else if (angle >= 45 && angle <= 135)
+        { animator.SetInteger("Angle Movement", 90); }
+        else if (angle > 315 || angle < 45)
+        { animator.SetInteger("Angle Movement", 0); }
+
         animator.SetFloat("Speed", moveInput.magnitude);       
     }
 
@@ -108,9 +124,7 @@ public class PlayerController : MonoBehaviour
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         pivot.rotation = Quaternion.AngleAxis(angle + 90, Vector3.forward);
 
-        float pivotAngle = 360 - pivot.eulerAngles.z;
-
-        Debug.Log(pivotAngle);
+        float pivotAngle = pivot.eulerAngles.z;
 
         if (pivotAngle >= 225 && pivotAngle <= 315) {animator.SetInteger("Angle", 270); }
         else if (pivotAngle > 135 && pivotAngle < 225) {animator.SetInteger("Angle", 180); }
