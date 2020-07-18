@@ -44,6 +44,7 @@ public class Health : MonoBehaviour
 
     void Start()
     {
+        // Subscribe events
         onHealthLoss += HealthLost;
     }
 
