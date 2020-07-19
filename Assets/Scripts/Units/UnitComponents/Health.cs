@@ -22,6 +22,9 @@ public class Health : MonoBehaviour
     public delegate void OnDeath();
     public OnDeath onDeath;
 
+    public delegate void OnAttack(GameObject source);
+    public OnAttack onAttack;
+
     // Health management
     private float currentHealth;
     private float CurrentHealth
@@ -59,8 +62,13 @@ public class Health : MonoBehaviour
     /// Modify Unit's health, use negative number for health loss
     /// </summary>
     /// <param name="amount">Amount of Health to give to this Unit</param>
-    public void ModifyHealth(float amount)
+    public void ModifyHealth(float amount, GameObject source)
     {
         CurrentHealth += amount;
+
+        if (amount < 0)
+        {
+            onAttack?.Invoke(source);
+        }
     }
 }

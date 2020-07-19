@@ -8,8 +8,8 @@ public class PlayerController : MonoBehaviour
     // Player components
     public IWeapon currentWeapon;
     public List<IWeapon> equippedWeapons;
-    public Transform pivot;
 
+    private Transform pivot;
     private Rigidbody2D body;
     private Animator animator;
     private Vector2 moveInput;
@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
         // Get components
         body = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        pivot = transform.Find("Pivot");
         mainCam = Camera.main;
     }
 
@@ -36,7 +37,7 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        Move(moveInput);
+        Move();
     }
 
     void Update()
@@ -93,14 +94,14 @@ public class PlayerController : MonoBehaviour
     }
 
     // Move the character
-    private void Move(Vector2 direction)
+    private void Move()
     {
         // Move it toward the input order
         Vector2 velocity = Vector2.MoveTowards(body.velocity, moveInput * speed, acceleration * Time.fixedDeltaTime);
         body.velocity = velocity;
 
         // Rotate legs toward movemement if it's not 180 deg
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        float angle = Mathf.Atan2(moveInput.y, moveInput.x) * Mathf.Rad2Deg;
         angle += 90;
         float pivotAngle = pivot.eulerAngles.z;
         if (Mathf.Abs(angle - pivotAngle) > 135 && Mathf.Abs(angle - pivotAngle) < 225)
@@ -115,7 +116,7 @@ public class PlayerController : MonoBehaviour
         else if (angle > 315 || angle < 45)
         { animator.SetInteger("Angle Movement", 0); }
 
-        animator.SetFloat("Speed", moveInput.magnitude);       
+        animator.SetFloat("Speed", moveInput.magnitude);
     }
 
     // Rotates the character

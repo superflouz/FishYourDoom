@@ -57,7 +57,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!58 &169196114
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -86,7 +86,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7a184be289be4a438ad54509939f6e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pivot: {fileID: 6929284502228638685}
   speed: 5
   acceleration: 100
 --- !u!114 &169196116
@@ -519,7 +518,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 9e8939b82f9d4d84d9e44f8f706d1136, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.5019608}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
