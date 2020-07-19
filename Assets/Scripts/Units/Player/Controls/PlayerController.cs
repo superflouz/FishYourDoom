@@ -6,12 +6,12 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 { 
     // Player components
-    public Animator animator;
     public IWeapon currentWeapon;
     public List<IWeapon> equippedWeapons;
     public Transform pivot;
 
-    private Rigidbody2D body;  
+    private Rigidbody2D body;
+    private Animator animator;
     private Vector2 moveInput;
     private Vector2 currentVelocity;
     private Vector2 cursorLook;
@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     {
         // Get components
         body = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
         mainCam = Camera.main;
     }
 
