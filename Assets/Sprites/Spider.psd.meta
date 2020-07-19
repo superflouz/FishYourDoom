@@ -155,6 +155,9 @@ TextureImporter:
   - first:
       213: 5814434056301129786
     second: Spider_26
+  - first:
+      213: 2630808853841813199
+    second: Spider_27
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -793,8 +796,8 @@ TextureImporter:
         y: 75
         width: 32
         height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -802,6 +805,27 @@ TextureImporter:
       bones: []
       spriteID: a3033cfc7f401b050800000000000000
       internalID: 5814434056301129786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spider_27
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 43
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fce9135c6b2828420800000000000000
+      internalID: 2630808853841813199
       vertices: []
       indices: 
       edges: []
