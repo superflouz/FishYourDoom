@@ -5,13 +5,13 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    private static readonly int numberOfEnums = Enum.GetValues(typeof(Item.Category)).Length;
-    public List<Item>[] itemLists = new List<Item>[numberOfEnums];
-    public Transform[] childLists = new Transform[numberOfEnums];
+    public List<Item>[] itemLists;
 
     // Start is called before the first frame update
     void Start()
     {
+        int numberOfCategories = Enum.GetValues(typeof(Item.Category)).Length;
+        itemLists = new List<Item>[numberOfCategories];
         for (int i = 0; i < itemLists.Length; i++) {
             itemLists[i] = new List<Item>();
         }
@@ -33,7 +33,7 @@ public class Inventory : MonoBehaviour
             Item newInstance = Instantiate(item);
             newInstance.Quantity = 1;
             itemList.Add(newInstance);
-            newInstance.transform.parent = childLists[(int)item.category];
+            newInstance.transform.parent = transform.GetChild((int)item.category);
         }
     }
 }

@@ -7,13 +7,18 @@ public class Item : MonoBehaviour
     public enum Category : int
     {
         Consumable = 0,
-        Weapon = 1
+        Lure = 1,
+        Dart = 2,
+        Trap = 3,
+        Ingredient = 4,
+        Weapon = 5
     }
 
     public Category category;
 
     public string id;
 
+    [SerializeField]
     private uint quantity;
     public uint Quantity
     {
