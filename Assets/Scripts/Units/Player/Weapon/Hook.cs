@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Hook : MonoBehaviour
 {
-    public HingeJoint2D joint;
+    public Player player;
     private Rigidbody2D body;
     private Collider2D coll;
 
@@ -17,7 +17,8 @@ public class Hook : MonoBehaviour
 
     public void Throw(Vector2 direction, float force)
     {
-        body.transform.position = joint.transform.position;
+        body.transform.position = player.transform.position;
+        body.velocity = Vector2.zero;
         body.AddForce(direction.normalized * force, ForceMode2D.Impulse);
     }
 
