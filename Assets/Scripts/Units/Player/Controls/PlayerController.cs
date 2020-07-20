@@ -8,7 +8,6 @@ public class PlayerController : MonoBehaviour
     // Player components
     public Weapon currentWeapon;
     public List<Weapon> equippedWeapons;
-    public Transform pivot;
 
     private Transform pivot;
     private Rigidbody2D body;

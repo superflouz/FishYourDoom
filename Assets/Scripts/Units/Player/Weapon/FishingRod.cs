@@ -40,6 +40,7 @@ public class FishingRod : Weapon
 
     private void ThrowHook(Vector2 direction)
     {
-        hook.Throw(direction, throwStrenght);
+        if (hook != null)
+            hook.Throw(direction, throwStrenght);
     }
 }
