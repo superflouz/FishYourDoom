@@ -6,8 +6,9 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 { 
     // Player components
-    public IWeapon currentWeapon;
-    public List<IWeapon> equippedWeapons;
+    public Weapon currentWeapon;
+    public List<Weapon> equippedWeapons;
+    public Transform pivot;
 
     private Transform pivot;
     private Rigidbody2D body;
@@ -69,7 +70,7 @@ public class PlayerController : MonoBehaviour
     // Fired by InputSystem
     public void OnSpecialAttack(InputValue value)
     {
-
+        currentWeapon.SpecialAttack();
     }
 
     // Fired by InputSystem

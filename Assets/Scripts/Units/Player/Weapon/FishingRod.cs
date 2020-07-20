@@ -2,27 +2,44 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FishingRod : IWeapon
+public class FishingRod : Weapon
 {
-    // Start is called before the first frame update
+    public Player player;
+    public Hook hook;
+    private Stats playerStats;
+    private Animator animator;
+    
+    public float attackPower;
+    public float attackSpeed;
+
+    public float throwStrenght;
+    public float lineLenght;
+
     void Start()
     {
-        
+        animator = GetComponent<Animator>();
+        playerStats = player.Stats;
     }
 
-    // Update is called once per frame
     void Update()
     {
         
     }
 
-    public void Attack()
+    public override void Attack()
     {
-        
+        // Set animation trigger
     }
 
-    public void SpecialAttack()
+    public override void SpecialAttack()
     {
+        Vector2 v = Globals.DegreeToVector2(transform.parent.rotation.eulerAngles.z - 90);
+        ThrowHook(v);
+        // Set animation trigger
+    }   
 
+    private void ThrowHook(Vector2 direction)
+    {
+        hook.Throw(direction, throwStrenght);
     }
 }
