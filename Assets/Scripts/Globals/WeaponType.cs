@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public static class WeaponType
+public static class WeaponType 
 {
     public enum Type
     {

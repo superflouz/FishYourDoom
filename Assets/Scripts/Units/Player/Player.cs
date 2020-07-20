@@ -9,6 +9,12 @@ public class Player : MonoBehaviour
     private Stats stats;
     private Animator animator;
     private Rigidbody2D body;
+
+    public Stats Stats
+    {
+        get { return stats; }
+        set { stats = value; }
+    }
     
     // Start is called before the first frame update
     void Start()
