@@ -13,11 +13,11 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Creatures
+  - Player
+  - Corpses
+  - Environment
+  - Interactives
   - 
   - 
   - 

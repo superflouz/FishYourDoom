@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Spider : MonoBehaviour
 {
+    public bool webActive;
     public GameObject aggro;
     public float attackRange;
     public float speed;
@@ -14,7 +15,7 @@ public class Spider : MonoBehaviour
     private Transform pivot;
     private Animator animator;
     private Health health;
-
+    private FieldOfView fieldOfView;
 
     private float attackTimer;
 
@@ -24,6 +25,7 @@ public class Spider : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         health = GetComponent<Health>();
+        fieldOfView = GetComponent<FieldOfView>();
         pivot = transform.Find("Pivot");
     }
 
@@ -31,6 +33,9 @@ public class Spider : MonoBehaviour
     {
         health.onAttack += OnAttackReceived;
         health.onDeath += OnDeath;
+
+        if (!webActive)
+            animator.SetTrigger("Skip Web");
     }
 
     // Update is called once per frame
@@ -49,12 +54,20 @@ public class Spider : MonoBehaviour
                 attackTimer = 1 / attackSpeed;
             }
         }
-        else
+        else if (attackTimer > 0)
         {
             attackTimer -= Time.deltaTime;
             if (attackTimer <= 0)
             {
                 animator.SetBool("Attack", false);
+            }
+        }
+        else if (aggro == null)
+        {
+            foreach (Transform target in fieldOfView.visibleTargets)
+            {
+                if (target.GetComponent<Player>())
+                    aggro = target.gameObject;
             }
         }
     }
