@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Item : MonoBehaviour
 {
@@ -18,6 +19,13 @@ public class Item : MonoBehaviour
 
     public string id;
 
+    public Sprite itemSprite;
+
+    private Transform background;
+    private Transform item;
+    private Transform text;
+    private Transform border;
+
     [SerializeField]
     private uint quantity;
     public uint Quantity
@@ -27,14 +35,24 @@ public class Item : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        background = transform.GetChild(0);
+        item = transform.GetChild(1);
+        border = transform.GetChild(2);
+        text = transform.GetChild(3);
+
+        item.GetComponent<Image>().sprite = itemSprite;
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void UpdateText()
+    {
+        text.GetComponent<Text>().text = Quantity.ToString();
     }
 }
