@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4030042386230753935}
   - component: {fileID: 7502959507670619636}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Hitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,7 +57,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1109634363517480517}
   - component: {fileID: 2116050479725071050}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: String
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -138,7 +138,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6317428950656118179}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -169,7 +169,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3979706889482808289}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -203,7 +203,7 @@ GameObject:
   - component: {fileID: 813286522944757842}
   - component: {fileID: 3063288058284383334}
   - component: {fileID: 4365008019433355920}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Web
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -314,7 +314,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8587343494814377071}
   - component: {fileID: 9082088274800790179}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -397,10 +397,11 @@ GameObject:
   - component: {fileID: 8917332818687459364}
   - component: {fileID: 5922973887312417639}
   - component: {fileID: 9066504777448563436}
+  - component: {fileID: 7447242008230706162}
   - component: {fileID: 5856636551153447432}
   - component: {fileID: 4307172034573653845}
   - component: {fileID: 3530949500850836728}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Spider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -437,6 +438,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86a0305e697e83044a01fd52939198c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  webActive: 0
   aggro: {fileID: 0}
   attackRange: 1
   speed: 3
@@ -456,6 +458,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   threshHoldHealth: 50
+--- !u!114 &7447242008230706162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8917332818687459367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7064efc45753ab840b1fa38a989ef209, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  viewDistance: 5
+  viewAngle: 90
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 768
+  viewMask:
+    serializedVersion: 2
+    m_Bits: 2048
+  visibleTargets: []
 --- !u!95 &5856636551153447432
 Animator:
   serializedVersion: 3
@@ -522,7 +545,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8917332818916453061}
   - component: {fileID: 6106336844526873575}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}

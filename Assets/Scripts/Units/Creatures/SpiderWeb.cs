@@ -5,11 +5,12 @@ using UnityEngine;
 public class SpiderWeb : MonoBehaviour
 {
     public Spider spider;
+    private bool webActive;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        webActive = transform.parent.GetComponent<Spider>().webActive;
     }
 
     // Update is called once per frame
@@ -20,7 +21,12 @@ public class SpiderWeb : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        // Apply root to collider
-        spider.PreyDetected(collision.gameObject);
+        if (webActive)
+        {
+            // Apply root to collider
+            spider.PreyDetected(collision.gameObject);
+            webActive = false;
+        }
+
     }
 }

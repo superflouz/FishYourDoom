@@ -8,18 +8,23 @@ public class Hook : MonoBehaviour
     private Rigidbody2D body;
     private Collider2D coll;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
         body = GetComponent<Rigidbody2D>();
         coll = GetComponent<Collider2D>();
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        gameObject.SetActive(false);
     }
 
     public void Throw(Vector2 direction, float force)
     {
         body.transform.position = player.transform.position;
         body.velocity = Vector2.zero;
-        body.AddForce(direction.normalized * force, ForceMode2D.Impulse);
+        body.AddForce(direction.normalized * force, ForceMode2D.Impulse);        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
