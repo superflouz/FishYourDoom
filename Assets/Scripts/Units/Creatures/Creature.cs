@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Creature : MonoBehaviour
 {
@@ -8,4 +9,6 @@ public class Creature : MonoBehaviour
     {
 
     }
+
+    
 }
