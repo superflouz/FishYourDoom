@@ -71,16 +71,36 @@ public class Inventory : MonoBehaviour
 
         Item itemInstance;
         if (itemList.Exists(i => i.id.CompareTo(item.id) == 0)) {
+        //if (false) {
             itemInstance = itemList.Find(i => i.id.CompareTo(item.id) == 0);
             itemInstance.Quantity++;
         } else {
-            itemInstance = Instantiate(item, inventory.GetChild((int)item.category), false);
+            itemInstance = Instantiate(item);
             itemInstance.Quantity = 1;
             itemInstance.GetComponent<RectTransform>().localPosition = ComputePositionOfItem(itemList.Count, (int)item.category);
             itemList.Add(itemInstance);
+            itemInstance.transform.SetParent(inventory.GetChild((int)item.category), false);
         }
 
         itemInstance.UpdateText();
+    }
+
+    public void Remove(Item item)
+    {
+        List<Item> itemList = itemLists[(int)item.category];
+
+        if (itemList.Exists(i => i.id.CompareTo(item.id) == 0)) {
+            Item itemInstance = itemList.Find(i => i.id.CompareTo(item.id) == 0);
+            if (--itemInstance.Quantity <= 0) {
+                itemList.Remove(itemInstance);
+                Destroy(itemInstance.gameObject);
+                RefreshPositionOfItems(itemInstance.category);
+            } else {
+                itemInstance.UpdateText();
+            }
+        } else {
+            Debug.LogWarning("Tried to remove an item not existing in an item list : " + item.id);
+        }
     }
 
     public void ChangeActiveSubInventory(int categoryIndex)
@@ -144,9 +164,21 @@ public class Inventory : MonoBehaviour
         float x = border + (spaceBetweenColumns + itemRect.width) * (positionInList % numberOfColumns);
         float y = border + (spaceBetweenRows + itemRect.height) * (int)(positionInList / numberOfColumns);
 
-        if (y +  itemRect.height > inventoryRectTransform.rect.height) {
+        float minY = border + (itemRect.height + spaceBetweenRows) * (defaultNumberofRows - 1);
+
+        // Increase size of inventory if the current height is not enough for a new object
+        // Or reduce the size if its too tall but not more than the minimum size
+        if (inventoryRectTransform.rect.height - border < y + itemRect.height) {
             inventoryRectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical,
                 inventoryRectTransform.rect.height + itemRect.height + spaceBetweenRows
+                //y + border + itemRect.height + spaceBetweenRows
+            );
+        } else if (positionInList % numberOfColumns == numberOfColumns - 1 && y >= minY
+            && inventoryRectTransform.rect.height - border - spaceBetweenRows > y + itemRect.height
+        ) {
+            inventoryRectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical,
+                inventoryRectTransform.rect.height - (itemRect.height + spaceBetweenRows)
+                //y + border + itemRect.height + (y != minY ? spaceBetweenRows : 0)
             );
         }
         y *= -1;
@@ -167,5 +199,18 @@ public class Inventory : MonoBehaviour
             + spaceBetweenRows * (defaultNumberofRows - 1)
         );
         panel.GetComponent<RectTransform>().SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, height);
+    }
+
+    private void RefreshPositionOfItems(Item.Category category)
+    {
+        RefreshPositionOfItems(itemLists[(int)category]);
+    }
+
+    private void RefreshPositionOfItems(List<Item> itemList)
+    {
+        for (int i = 0; i < itemList.Count; i++) {
+            Item item = itemList[i];
+            item.GetComponent<RectTransform>().localPosition = ComputePositionOfItem(i, (int)item.category);
+        }
     }
 }
