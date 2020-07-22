@@ -62,18 +62,9 @@ public class PlayerController : MonoBehaviour
 
     // Fired by InputSystem
     public void OnAttack(InputValue value)
-    {
+    {              
         currentWeapon.Attack();
-
-        // Play Attack animation based on currentWeapon
-        if (currentWeapon.Type == Weapon.Types.FishingRod)
-        {
-            animator.SetTrigger("Attack");
-        }
-        else if (currentWeapon.Type == Weapon.Types.FishingRod)
-        {
-
-        }      
+        animator.SetTrigger("Attack");
     }
 
     // Fired by InputSystem
@@ -146,7 +137,7 @@ public class PlayerController : MonoBehaviour
 
     private void SwitchWeapon()
     {
-
+        
     }
 
 }
