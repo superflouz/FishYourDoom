@@ -1,0 +1,584 @@
+fileFormatVersion: 2
+guid: 674c0c3266e166849b4223dfe9e2cc15
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3951232389943202276
+    second: FishingRod_IdleDown
+  - first:
+      213: 5474798172975761260
+    second: FishingRod_IdleLeft
+  - first:
+      213: -2031793005546620517
+    second: FishingRod_IdleRight
+  - first:
+      213: -8103818742360442541
+    second: FishingRod_IdleUp
+  - first:
+      213: 4102484960548506478
+    second: FishingRod_HookDown1
+  - first:
+      213: -3686411960830919693
+    second: FishingRod_HookDown2
+  - first:
+      213: -3232719926927508697
+    second: FishingRod_HookDown3
+  - first:
+      213: -7770132882295148852
+    second: FishingRod_HookLeft1
+  - first:
+      213: -7786939908148894993
+    second: FishingRod_HookLeft2
+  - first:
+      213: -569401619824423748
+    second: FishingRod_HookLeft3
+  - first:
+      213: -7828464974563623599
+    second: FishingRod_HookRight1
+  - first:
+      213: -6141871969021697084
+    second: FishingRod_HookRight2
+  - first:
+      213: -260958252841500240
+    second: FishingRod_HookRight3
+  - first:
+      213: -4836428263223111330
+    second: FishingRod_HookUp1
+  - first:
+      213: -7760727509311671548
+    second: FishingRod_HookUp2
+  - first:
+      213: 3478588641344635261
+    second: FishingRod_HookUp3
+  - first:
+      213: -5779542437511410037
+    second: FishingRod_Attack1
+  - first:
+      213: -3353698404630116326
+    second: FishingRod_Attack2
+  - first:
+      213: 215139647770115852
+    second: FishingRod_Attack3
+  - first:
+      213: 2998304929653999826
+    second: FishingRod_Attack4
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: FishingRod_IdleDown
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 743
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e115939ce895d630800000000000000
+      internalID: 3951232389943202276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingRod_IdleLeft
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 743
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c678d2d7ee36afb40800000000000000
+      internalID: 5474798172975761260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingRod_IdleRight
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 743
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b99354fb60f9dc3e0800000000000000
+      internalID: -2031793005546620517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingRod_IdleUp
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 743
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 359f3792ac3798f80800000000000000
+      internalID: -8103818742360442541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingRod_HookDown1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 679
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6b40e1f554fee830800000000000000
+      internalID: 4102484960548506478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingRod_HookDown2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 679
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fbfbe26adb37dcc0800000000000000
+      internalID: -3686411960830919693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingRod_HookDown3
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 679
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72bb829aa521323d0800000000000000
+      internalID: -3232719926927508697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingRod_HookLeft1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 615
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cce273dbf41fa2490800000000000000
+      internalID: -7770132882295148852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingRod_HookLeft2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 615
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe2e877196b3fe390800000000000000
+      internalID: -7786939908148894993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingRod_HookLeft3
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 615
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbc45db5e341918f0800000000000000
+      internalID: -569401619824423748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingRod_HookRight1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 551
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15d3c862594bb5390800000000000000
+      internalID: -7828464974563623599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingRod_HookRight2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 551
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c368863cffa3caa0800000000000000
+      internalID: -6141871969021697084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingRod_HookRight3
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 551
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b10d260ad3e06cf0800000000000000
+      internalID: -260958252841500240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingRod_HookUp1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 488
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e515dec7e1e81ecb0800000000000000
+      internalID: -4836428263223111330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingRod_HookUp2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 487
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40330e8c27b5c4490800000000000000
+      internalID: -7760727509311671548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingRod_HookUp3
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 487
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d714e0f50fd664030800000000000000
+      internalID: 3478588641344635261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingRod_Attack1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 423
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8e46df36c0facfa0800000000000000
+      internalID: -5779542437511410037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingRod_Attack2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 423
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a184a34d1154571d0800000000000000
+      internalID: -3353698404630116326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingRod_Attack3
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 423
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0fb07aae545cf200800000000000000
+      internalID: 215139647770115852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FishingRod_Attack4
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 423
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d84454a27e1c9920800000000000000
+      internalID: 2998304929653999826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 1
+  pSDShowRemoveMatteOption: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

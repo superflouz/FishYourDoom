@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PlayerBodyIdleUp
+  m_Name: FishingBladeIdle
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -22,7 +22,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
+        value: 0
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
@@ -33,26 +33,29 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: Sprite/Weapon
-    classID: 212
-    script: {fileID: 0}
-  m_PPtrCurves:
-  - curve:
-    - time: 0
-      value: {fileID: -1182821291677670348, guid: 0ea5fd1d7b51c2d40adb1b0180cf0be9,
-        type: 3}
-    attribute: m_Sprite
-    path: Sprite/Body
-    classID: 212
+    path: Collider
+    classID: 70
     script: {fileID: 0}
   - curve:
-    - time: 0
-      value: {fileID: -5784146599613366596, guid: 332b1c5d4d3725443aa06b5c9ec25bc4,
-        type: 3}
-    attribute: m_Sprite
-    path: Sprite/Weapon
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Enabled
+    path: 
     classID: 212
     script: {fileID: 0}
+  m_PPtrCurves: []
   m_SampleRate: 20
   m_WrapMode: 0
   m_Bounds:
@@ -61,35 +64,26 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 3341692481
+      path: 860563329
+      attribute: 3305885265
+      script: {fileID: 0}
+      typeID: 70
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 0
       attribute: 3305885265
       script: {fileID: 0}
       typeID: 212
       customType: 0
       isPPtrCurve: 0
-    - serializedVersion: 2
-      path: 875722246
-      attribute: 0
-      script: {fileID: 0}
-      typeID: 212
-      customType: 23
-      isPPtrCurve: 1
-    - serializedVersion: 2
-      path: 3341692481
-      attribute: 0
-      script: {fileID: 0}
-      typeID: 212
-      customType: 23
-      isPPtrCurve: 1
-    pptrCurveMapping:
-    - {fileID: -1182821291677670348, guid: 0ea5fd1d7b51c2d40adb1b0180cf0be9, type: 3}
-    - {fileID: -5784146599613366596, guid: 332b1c5d4d3725443aa06b5c9ec25bc4, type: 3}
+    pptrCurveMapping: []
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.05
+    m_StopTime: 0
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -110,7 +104,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
+        value: 0
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
@@ -121,7 +115,26 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: Sprite/Weapon
+    path: Collider
+    classID: 70
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Enabled
+    path: 
     classID: 212
     script: {fileID: 0}
   m_EulerEditorCurves: []
