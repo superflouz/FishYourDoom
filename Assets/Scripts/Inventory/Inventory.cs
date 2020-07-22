@@ -19,7 +19,7 @@ public class Inventory : MonoBehaviour
     private Transform navigationTabs;
     private Transform scrollBar;
 
-    public float spaceBetweenInventoryAndScrollBar = 15;
+    public float spaceBetweenInventoryAndScrollBar = 0;
 
     public uint numberOfColumns = 12;
     public uint defaultNumberofRows = 6;
@@ -27,17 +27,22 @@ public class Inventory : MonoBehaviour
     public float spaceBetweenRows = 5;
     public float border = 10;
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         inventory = transform.GetChild(0);
         navigationTabs = transform.GetChild(1);
         scrollBar = transform.GetChild(2);
+    }
 
-        scrollBar.GetComponent<RectTransform>().localPosition = new Vector2(inventory.GetComponent<RectTransform>().rect.width / 2 + spaceBetweenInventoryAndScrollBar ,0);
-        scrollBar.GetComponent<RectTransform>().SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, inventory.GetComponent<RectTransform>().rect.height);
-
+    // Start is called before the first frame update
+    void Start()
+    {
         ResizePanelForItemGrid(inventory);
+
+        RectTransform scrollBarRectTransform = scrollBar.GetComponent<RectTransform>();
+        RectTransform inventoryRectTransform = inventory.GetComponent<RectTransform>();
+        scrollBarRectTransform.localPosition = new Vector2(inventoryRectTransform.rect.width / 2 + spaceBetweenInventoryAndScrollBar, 0);
+        scrollBarRectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, inventoryRectTransform.rect.height);
 
         numberOfCategories = Enum.GetValues(typeof(Item.Category)).Length;
         itemLists = new List<Item>[numberOfCategories];
@@ -133,14 +138,19 @@ public class Inventory : MonoBehaviour
 
     private Vector2 ComputePositionOfItem(int positionInList, int categoryIndex)
     {
-        float x = border + (spaceBetweenColumns + itemPrefab.GetComponent<RectTransform>().rect.width) * (positionInList % numberOfColumns);
-        float y = border + (spaceBetweenRows + itemPrefab.GetComponent<RectTransform>().rect.height) * (int)(positionInList / numberOfColumns);
+        Rect itemRect= itemPrefab.GetComponent<RectTransform>().rect;
+        RectTransform inventoryRectTransform = inventory.GetChild(categoryIndex).GetComponent<RectTransform>();
 
-        if (y +  itemPrefab.GetComponent<RectTransform>().rect.height > inventory.GetChild(categoryIndex).GetComponent<RectTransform>().rect.height) {
-            RectTransform rt = inventory.GetChild(categoryIndex).GetComponent<RectTransform>();
-            rt.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, rt.rect.height + itemPrefab.GetComponent<RectTransform>().rect.height + spaceBetweenRows);
+        float x = border + (spaceBetweenColumns + itemRect.width) * (positionInList % numberOfColumns);
+        float y = border + (spaceBetweenRows + itemRect.height) * (int)(positionInList / numberOfColumns);
+
+        if (y +  itemRect.height > inventoryRectTransform.rect.height) {
+            inventoryRectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical,
+                inventoryRectTransform.rect.height + itemRect.height + spaceBetweenRows
+            );
         }
         y *= -1;
+
         return new Vector2(x, y);
     }
 
@@ -151,11 +161,11 @@ public class Inventory : MonoBehaviour
             + itemPrefab.GetComponent<RectTransform>().rect.height * numberOfColumns
             + spaceBetweenColumns * (numberOfColumns - 1)
         );
+
         float height = border * 2 + (defaultNumberofRows <= 0 ? 0 :
             itemPrefab.GetComponent<RectTransform>().rect.height * defaultNumberofRows
             + spaceBetweenRows * (defaultNumberofRows - 1)
         );
-
         panel.GetComponent<RectTransform>().SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, height);
     }
 }

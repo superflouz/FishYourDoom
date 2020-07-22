@@ -121,7 +121,7 @@ MonoBehaviour:
   itemPrefab: {fileID: 4594493970220755687, guid: 62780bbb7f2d687d6b111b9cd792b1af,
     type: 3}
   buttonHeight: 30
-  spaceBetweenInventoryAndScrollBar: 15
+  spaceBetweenInventoryAndScrollBar: 0
   numberOfColumns: 12
   defaultNumberofRows: 6
   spaceBetweenColumns: 5
