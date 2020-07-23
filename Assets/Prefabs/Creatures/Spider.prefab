@@ -396,6 +396,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8917332818687459364}
   - component: {fileID: 5922973887312417639}
+  - component: {fileID: 4651118641388272371}
   - component: {fileID: 9066504777448563436}
   - component: {fileID: 7447242008230706162}
   - component: {fileID: 5856636551153447432}
@@ -439,11 +440,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   webActive: 0
+--- !u!114 &4651118641388272371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8917332818687459367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0518249ff19d8d2428aa1c535185ebb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  creatureType: 0
   aggro: {fileID: 0}
   attackRange: 1
   speed: 3
-  acceleration: 20
-  attackSpeed: 0.75
+  acceleration: 200
+  attackSpeed: 1
 --- !u!114 &9066504777448563436
 MonoBehaviour:
   m_ObjectHideFlags: 0
