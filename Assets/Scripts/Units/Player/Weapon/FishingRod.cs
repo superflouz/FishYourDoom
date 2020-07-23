@@ -64,7 +64,7 @@ public class FishingRod : Weapon
 
         hookThrown = true;
         hook.gameObject.SetActive(true);
-        hook.Throw(direction, throwStrenght);      
+        hook.Throw(direction, throwStrenght);   
     }
 
     private void RetrieveHook()

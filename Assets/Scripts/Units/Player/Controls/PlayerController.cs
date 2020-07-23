@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 currentVelocity;
     private Vector2 cursorLook;
     private Camera mainCam;
+    private PlayerInput playerInput;
 
     // Movement variables
     public float speed = 5;
@@ -26,6 +27,7 @@ public class PlayerController : MonoBehaviour
         // Get components
         body = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        playerInput = GetComponent<PlayerInput>();
         pivot = transform.Find("Pivot");
         mainCam = Camera.main;
     }
@@ -72,6 +74,23 @@ public class PlayerController : MonoBehaviour
     {
         currentWeapon.SpecialAttack();
         animator.SetTrigger("SpecialAttack");
+
+        if(currentWeapon.Type == Weapon.Types.FishingRod)
+        {
+            playerInput.SwitchCurrentActionMap("Hook");
+        }
+    }
+
+    // Fired by InputSystem
+    public void OnReel()
+    {
+        
+    }
+
+    // Fired by InputSystem
+    public void OnInstantReel()
+    {
+        playerInput.SwitchCurrentActionMap("Player");
     }
 
     // Fired by InputSystem
