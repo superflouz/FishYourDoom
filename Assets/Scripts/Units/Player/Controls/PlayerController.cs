@@ -76,9 +76,13 @@ public class PlayerController : MonoBehaviour
     // Fired by InputSystem
     public void OnInteract()
     {       
-        Vector2 offset = Globals.DegreeToVector2(pivot.localRotation.eulerAngles.z);
+        Vector2 offset = Globals.DegreeToVector2(pivot.localRotation.eulerAngles.z - 90);
 
         Collider2D[] hits = Physics2D.OverlapCircleAll((Vector2)transform.position + offset, 1, 1 << LayerMask.NameToLayer("Interactives"));
+
+        if (hits.Length > 0) {
+            hits[0].gameObject.GetComponent<IInteractive>()?.Interact(GameObject.Find("Player").GetComponent<Player>());
+        }
     }
 
     // Fired by InputSystem
@@ -94,6 +98,11 @@ public class PlayerController : MonoBehaviour
     public void OnLook(InputValue value)
     {
         cursorLook = value.Get<Vector2>();
+    }
+
+    public void OnInventory()
+    {
+        GameObject.Find("InventoryUI").GetComponent<Inventory>().Toggle();
     }
 
     // Move the character
@@ -141,10 +150,4 @@ public class PlayerController : MonoBehaviour
     {
         
     }
-
-    public void OnInventory()
-    {
-        GameObject.Find("InventoryUI").GetComponent<Inventory>().Toggle();
-    }
-
 }

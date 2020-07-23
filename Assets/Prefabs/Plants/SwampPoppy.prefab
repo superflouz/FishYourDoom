@@ -32,5 +32,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: SwampPoppy
       objectReference: {fileID: 0}
+    - target: {fileID: 1143067719831848687, guid: c618ce30bfab0304f86148bece2e3fde,
+        type: 3}
+      propertyPath: lootTable.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1143067719831848687, guid: c618ce30bfab0304f86148bece2e3fde,
+        type: 3}
+      propertyPath: itemPrefab
+      value: 
+      objectReference: {fileID: 5731404617626051482, guid: dedeb182353a375d3abaca483ece4084,
+        type: 3}
+    - target: {fileID: 1143067719831848687, guid: c618ce30bfab0304f86148bece2e3fde,
+        type: 3}
+      propertyPath: lootTable.Array.data[0].dropWeight
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1143067719831848687, guid: c618ce30bfab0304f86148bece2e3fde,
+        type: 3}
+      propertyPath: lootTable.Array.data[0].itemPrefab
+      value: 
+      objectReference: {fileID: 5731404617626051482, guid: dedeb182353a375d3abaca483ece4084,
+        type: 3}
+    - target: {fileID: 5583412432632252745, guid: c618ce30bfab0304f86148bece2e3fde,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1352955200029874055, guid: 54f06b8691e66a247be1e4b815071fa6,
+        type: 3}
+    - target: {fileID: 5583412432632252745, guid: c618ce30bfab0304f86148bece2e3fde,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c618ce30bfab0304f86148bece2e3fde, type: 3}

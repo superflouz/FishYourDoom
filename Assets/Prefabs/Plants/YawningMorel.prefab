@@ -1,42 +1,69 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &58257686206866253
+--- !u!1001 &5868095277255575932
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4315723511810811352, guid: b6408788d9eaac446ad4cc7badd02b57,
+    - target: {fileID: 191161368002516834, guid: c618ce30bfab0304f86148bece2e3fde,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 191161368002516834, guid: c618ce30bfab0304f86148bece2e3fde,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 191161368002516834, guid: c618ce30bfab0304f86148bece2e3fde,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 191161368002516834, guid: c618ce30bfab0304f86148bece2e3fde,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 191161368002516860, guid: c618ce30bfab0304f86148bece2e3fde,
+        type: 3}
+      propertyPath: m_Name
+      value: YawningMorel
+      objectReference: {fileID: 0}
+    - target: {fileID: 1143067719831848687, guid: c618ce30bfab0304f86148bece2e3fde,
+        type: 3}
+      propertyPath: lootTable.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1143067719831848687, guid: c618ce30bfab0304f86148bece2e3fde,
+        type: 3}
+      propertyPath: itemPrefab
+      value: 
+      objectReference: {fileID: 3983012682988323917, guid: 220c496c4b5e4c581930dc9bc3b57d33,
+        type: 3}
+    - target: {fileID: 1143067719831848687, guid: c618ce30bfab0304f86148bece2e3fde,
+        type: 3}
+      propertyPath: lootTable.Array.data[0].dropWeight
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1143067719831848687, guid: c618ce30bfab0304f86148bece2e3fde,
+        type: 3}
+      propertyPath: lootTable.Array.data[0].itemPrefab
+      value: 
+      objectReference: {fileID: 3983012682988323917, guid: 220c496c4b5e4c581930dc9bc3b57d33,
+        type: 3}
+    - target: {fileID: 5583412432632252745, guid: c618ce30bfab0304f86148bece2e3fde,
         type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -1268064389544249124, guid: 54f06b8691e66a247be1e4b815071fa6,
         type: 3}
-    - target: {fileID: 8376668837920259053, guid: b6408788d9eaac446ad4cc7badd02b57,
+    - target: {fileID: 5583412432632252745, guid: c618ce30bfab0304f86148bece2e3fde,
         type: 3}
-      propertyPath: m_Name
-      value: YawningMorel
-      objectReference: {fileID: 0}
-    - target: {fileID: 8376668837920259059, guid: b6408788d9eaac446ad4cc7badd02b57,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8376668837920259059, guid: b6408788d9eaac446ad4cc7badd02b57,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8376668837920259059, guid: b6408788d9eaac446ad4cc7badd02b57,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8376668837920259059, guid: b6408788d9eaac446ad4cc7badd02b57,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: b6408788d9eaac446ad4cc7badd02b57, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: c618ce30bfab0304f86148bece2e3fde, type: 3}

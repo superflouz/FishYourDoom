@@ -10,6 +10,12 @@ public class Player : MonoBehaviour
     private Animator animator;
     private Rigidbody2D body;
 
+    private Inventory inventory;
+    public Inventory Inventory
+    {
+        get { return inventory; }
+    }
+
     public Stats Stats
     {
         get { return stats; }
@@ -24,6 +30,8 @@ public class Player : MonoBehaviour
         stats = GetComponent<Stats>();
         body = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+
+        inventory = GameObject.Find("InventoryUI").GetComponent<Inventory>();
     }
 
     // Update is called once per frame

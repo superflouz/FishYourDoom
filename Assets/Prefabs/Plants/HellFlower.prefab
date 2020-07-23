@@ -32,6 +32,28 @@ PrefabInstance:
       propertyPath: m_Name
       value: HellFlower
       objectReference: {fileID: 0}
+    - target: {fileID: 1143067719831848687, guid: c618ce30bfab0304f86148bece2e3fde,
+        type: 3}
+      propertyPath: lootTable.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1143067719831848687, guid: c618ce30bfab0304f86148bece2e3fde,
+        type: 3}
+      propertyPath: itemPrefab
+      value: 
+      objectReference: {fileID: 438276070286054796, guid: de302e6b44537815cad775d5d9ffc2de,
+        type: 3}
+    - target: {fileID: 1143067719831848687, guid: c618ce30bfab0304f86148bece2e3fde,
+        type: 3}
+      propertyPath: lootTable.Array.data[0].dropWeight
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1143067719831848687, guid: c618ce30bfab0304f86148bece2e3fde,
+        type: 3}
+      propertyPath: lootTable.Array.data[0].itemPrefab
+      value: 
+      objectReference: {fileID: 438276070286054796, guid: de302e6b44537815cad775d5d9ffc2de,
+        type: 3}
     - target: {fileID: 5583412432632252745, guid: c618ce30bfab0304f86148bece2e3fde,
         type: 3}
       propertyPath: m_Sprite
@@ -42,6 +64,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingLayer
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5583412432632252745, guid: c618ce30bfab0304f86148bece2e3fde,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c618ce30bfab0304f86148bece2e3fde, type: 3}
