@@ -65,13 +65,20 @@ public class Inventory : MonoBehaviour
         
     }
 
+    public void ToggleInventory()
+    {
+        bool isActive = inventory.gameObject.activeSelf;
+        inventory.gameObject.SetActive(!isActive);
+        navigationTabs.gameObject.SetActive(!isActive);
+        scrollBar.gameObject.SetActive(!isActive);
+    }
+
     public void Add(Item item)
     {
         List<Item> itemList = itemLists[(int)item.category];
 
         Item itemInstance;
         if (itemList.Exists(i => i.id.CompareTo(item.id) == 0)) {
-        //if (false) {
             itemInstance = itemList.Find(i => i.id.CompareTo(item.id) == 0);
             itemInstance.Quantity++;
         } else {
