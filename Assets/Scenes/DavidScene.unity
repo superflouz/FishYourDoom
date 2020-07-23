@@ -132,12 +132,12 @@ GameObject:
   - component: {fileID: 30956501}
   - component: {fileID: 30956500}
   m_Layer: 0
-  m_Name: thumb-1920-876898
+  m_Name: background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &30956500
 SpriteRenderer:
   m_ObjectHideFlags: 0

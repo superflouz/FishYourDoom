@@ -71,6 +71,7 @@ public class PlayerController : MonoBehaviour
     public void OnSpecialAttack(InputValue value)
     {
         currentWeapon.SpecialAttack();
+        animator.SetTrigger("SpecialAttack");
     }
 
     // Fired by InputSystem
@@ -140,6 +141,11 @@ public class PlayerController : MonoBehaviour
     private void SwitchWeapon()
     {
         
+    }
+
+    public void OnInventory()
+    {
+        GameObject.Find("InventoryUI").GetComponent<Inventory>().Toggle();
     }
 
 }
