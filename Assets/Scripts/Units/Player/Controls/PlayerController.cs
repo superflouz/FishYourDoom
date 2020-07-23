@@ -71,6 +71,7 @@ public class PlayerController : MonoBehaviour
     public void OnSpecialAttack(InputValue value)
     {
         currentWeapon.SpecialAttack();
+        animator.SetTrigger("SpecialAttack");
     }
 
     // Fired by InputSystem
