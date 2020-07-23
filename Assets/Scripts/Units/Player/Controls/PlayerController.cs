@@ -74,9 +74,11 @@ public class PlayerController : MonoBehaviour
     }
 
     // Fired by InputSystem
-    public void OnInteract(InputValue value)
-    {
-        
+    public void OnInteract()
+    {       
+        Vector2 offset = Globals.DegreeToVector2(pivot.localRotation.eulerAngles.z);
+
+        Collider2D[] hits = Physics2D.OverlapCircleAll((Vector2)transform.position + offset, 1, 1 << LayerMask.NameToLayer("Interactives"));
     }
 
     // Fired by InputSystem
