@@ -65,7 +65,7 @@ public class Inventory : MonoBehaviour
         
     }
 
-    public void ToggleInventory()
+    public void Toggle()
     {
         bool isActive = inventory.gameObject.activeSelf;
         inventory.gameObject.SetActive(!isActive);

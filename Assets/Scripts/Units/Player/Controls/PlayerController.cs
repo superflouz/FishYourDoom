@@ -140,4 +140,9 @@ public class PlayerController : MonoBehaviour
         
     }
 
+    public void OnInventory()
+    {
+        GameObject.Find("InventoryUI").GetComponent<Inventory>().Toggle();
+    }
+
 }
