@@ -344,6 +344,52 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Hook",
+            "id": "bd0c123b-3b94-459e-a99f-e8e68c544632",
+            "actions": [
+                {
+                    "name": "Reel",
+                    "type": "Button",
+                    "id": "5f9f1f09-ac90-4abe-8a24-70a4b47bf3e9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "InstantReel",
+                    "type": "Button",
+                    "id": "8e3d764c-b008-4346-a7a5-1e84d293326d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "d23c5e0d-418c-4b1a-9299-f087c0fe9cb4",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Default",
+                    "action": "Reel",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fb802dc4-3d40-4992-9f90-ade072d24d5c",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Default",
+                    "action": "InstantReel",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [

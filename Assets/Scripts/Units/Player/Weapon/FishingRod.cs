@@ -7,6 +7,7 @@ public class FishingRod : Weapon
     public Player player;
     public Hook hook;
     private Stats playerStats;
+    private Animator playerAnimator;
     private Animator animator;
 
     private bool hookThrown;
@@ -20,6 +21,7 @@ public class FishingRod : Weapon
     private void Awake()
     {
         animator = GetComponent<Animator>();
+        playerAnimator = player.GetComponent<Animator>();
         playerStats = player.Stats;
 
         hookThrown = false;
@@ -39,6 +41,7 @@ public class FishingRod : Weapon
     public override void Attack()
     {
         // Set animation trigger
+        animator.SetTrigger("Attack");
     }
 
     public override void SpecialAttack()
@@ -56,18 +59,22 @@ public class FishingRod : Weapon
 
     private void ThrowHook(Vector2 direction)
     {
+        // Set animation trigger   
+        playerAnimator.SetBool("HookThrown", hookThrown);
+
         hookThrown = true;
         hook.gameObject.SetActive(true);
-        hook.Throw(direction, throwStrenght);
-
-        // Set animation trigger
+        hook.Throw(direction, throwStrenght);   
     }
 
     private void RetrieveHook()
     {
-        hookThrown = false;
-        hook.gameObject.SetActive(false);
-
         // Set animation trigger
+        playerAnimator.SetBool("HookThrown", hookThrown);
+
+        hookThrown = false;
+        hook.gameObject.SetActive(false);   
+        
+        // Reel in hook
     }
 }
