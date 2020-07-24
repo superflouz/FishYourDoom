@@ -12,6 +12,8 @@ public class Lootable : MonoBehaviour, IInteractive
 
     public List<Loot> lootTable = new List<Loot>();
 
+    public uint lootCount = 1;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +29,9 @@ public class Lootable : MonoBehaviour, IInteractive
     public void Interact(Player player)
     {
         player.Inventory.Add(GenerateLoot().itemPrefab);
-        Destroy(gameObject);
+        if (--lootCount <= 0) {
+            Destroy(gameObject);
+        }
     }
 
 
