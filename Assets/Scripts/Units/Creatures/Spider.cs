@@ -12,7 +12,7 @@ public class Spider : MonoBehaviour
     private FieldOfView fieldOfView;
     private Creature creature;
 
-    // Start is called before the first frame update
+
     void Awake()
     {
         animator = GetComponent<Animator>();
@@ -22,10 +22,10 @@ public class Spider : MonoBehaviour
         pivot = transform.Find("Pivot");
     }
 
+    // Start is called before the first frame update
     private void Start()
     {
         health.onAttack += OnAttackReceived;
-        health.onDeath += OnDeath;
 
         if (!webActive)
             animator.SetTrigger("Skip Web");
@@ -58,11 +58,4 @@ public class Spider : MonoBehaviour
     {
         creature.aggro = source;
     }
-
-    private void OnDeath()
-    {
-        animator.SetInteger("Angle", 1);
-        animator.SetTrigger("Die");
-    }
-
 }

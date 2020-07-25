@@ -17,7 +17,7 @@ public class FieldOfView : MonoBehaviour
         pivot = transform.Find("Pivot");
     }
 
-    void FindVisiblePlayer()
+    void FindVisibleTarget()
     {
         targetsInRadius = Physics2D.OverlapCircleAll(transform.position, viewDistance, targetLayer);
 
@@ -26,6 +26,10 @@ public class FieldOfView : MonoBehaviour
         for (int i = 0; i < targetsInRadius.Length; i++)
         {
             Transform target = targetsInRadius[i].transform;
+            if (target == transform)
+            {
+                continue;
+            }
             Vector2 dirTarget = new Vector2(target.position.x - transform.position.x, target.position.y - transform.position.y);
 
             if (Vector2.Angle(dirTarget, pivot.up * -1) < viewAngle / 2)
@@ -43,6 +47,6 @@ public class FieldOfView : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        FindVisiblePlayer();
+        FindVisibleTarget();
     }
 }

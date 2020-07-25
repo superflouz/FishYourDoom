@@ -20,6 +20,19 @@ public class Creature : MonoBehaviour
     public float acceleration;
     public float attackSpeed;
 
+    public Vector2 wanderingCenter;
+
+    public float wanderingSpeedRatio;
+    public float wanderingRadius;
+    public float pauseTime;
+    public float wanderTime;
+
+    private Vector2 currentWanderDirection;
+    private float pauseTimer;
+    private float wanderTimer;
+
+    public bool Dead { get; private set; }
+
     private Rigidbody2D body;
     private Transform pivot;
     private Animator animator;
@@ -27,6 +40,7 @@ public class Creature : MonoBehaviour
     private FieldOfView fieldOfView;
 
     private float attackTimer;
+
 
     // Start is called before the first frame update
     void Awake()
@@ -38,15 +52,46 @@ public class Creature : MonoBehaviour
         pivot = transform.Find("Pivot");
     }
 
+    private void Start()
+    {
+        health.onDeath += OnDeath;
+        pauseTimer = pauseTime;
+    }
+
     private void Update()
     {
         if (attackTimer > 0)
         {
             attackTimer -= Time.deltaTime;
-            if (attackTimer <= 0)
+        }
+    }
+
+    public void Wander()
+    {
+        if (wanderTimer > 0)
+        {
+            wanderTimer -= Time.deltaTime;
+            if (wanderTimer <= 0)
+                pauseTimer = pauseTime;
+
+            Move(currentWanderDirection, speed * wanderingSpeedRatio);
+        }
+
+        if (pauseTimer > 0)
+        {
+            pauseTimer -= Time.deltaTime;
+            if (pauseTimer <= 0)
             {
-                animator.SetBool("Attack", false);
+                Vector2 offsetWandering = Globals.DegreeToVector2(Random.Range(0f, 360f));
+                offsetWandering *= wanderingRadius;
+                offsetWandering += wanderingCenter;
+
+                currentWanderDirection = (offsetWandering - (Vector2)transform.position).normalized;
+
+                wanderTimer = wanderTime;
             }
+
+            Move(currentWanderDirection, 0);
         }
     }
 
@@ -76,6 +121,18 @@ public class Creature : MonoBehaviour
 
     public void AttackAggro()
     {
+        if (aggro != null)
+        {
+            Creature aggroCreature = aggro.GetComponent<Creature>();
+            if (aggroCreature)
+            {
+                if (aggroCreature.Dead)
+                {
+                    aggro = null;
+                }
+            }
+        }
+
         if (aggro != null && attackTimer <= 0)
         {
             if ((aggro.transform.position - transform.position).magnitude > attackRange)
@@ -85,7 +142,7 @@ public class Creature : MonoBehaviour
             else
             {
                 Move((aggro.transform.position - transform.position).normalized, 0);
-                animator.SetBool("Attack", true);
+                animator.SetTrigger("Attack");
                 attackTimer = 1 / attackSpeed;
             }
         }
@@ -95,8 +152,15 @@ public class Creature : MonoBehaviour
     {
         if (attackTimer <= 0)
         {
-            animator.SetBool("Attack", true);
+            animator.SetTrigger("Attack");
             attackTimer = 1 / attackSpeed;
         }
+    }
+
+
+    private void OnDeath()
+    {
+        Dead = true;
+        animator.SetTrigger("Die");
     }
 }

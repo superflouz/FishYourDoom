@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4030042386230753935}
   - component: {fileID: 7502959507670619636}
+  - component: {fileID: 9170719024396747162}
   m_Layer: 8
   m_Name: Hitbox
   m_TagString: Untagged
@@ -47,6 +48,20 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.7}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &9170719024396747162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2708702119343094886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc74d71c5d0afba42877912684c6e280, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  source: {fileID: 8917332818687459367}
+  damage: 20
 --- !u!1 &3420310957440199398
 GameObject:
   m_ObjectHideFlags: 0
@@ -203,7 +218,7 @@ GameObject:
   - component: {fileID: 813286522944757842}
   - component: {fileID: 3063288058284383334}
   - component: {fileID: 4365008019433355920}
-  m_Layer: 12
+  m_Layer: 8
   m_Name: Web
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -456,8 +471,9 @@ MonoBehaviour:
   aggro: {fileID: 0}
   attackRange: 1
   speed: 3
-  acceleration: 200
+  acceleration: 100
   attackSpeed: 1
+  wanderingCenter: {x: 0, y: 0}
 --- !u!114 &9066504777448563436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -472,6 +488,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   threshHoldHealth: 50
+  currentHealth: 0
 --- !u!114 &7447242008230706162
 MonoBehaviour:
   m_ObjectHideFlags: 0

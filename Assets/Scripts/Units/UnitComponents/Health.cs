@@ -26,7 +26,7 @@ public class Health : MonoBehaviour
     public OnAttack onAttack;
 
     // Health management
-    private float currentHealth;
+    public float currentHealth;
     private float CurrentHealth
     {
         get { return currentHealth; }
@@ -49,6 +49,8 @@ public class Health : MonoBehaviour
     {
         // Subscribe events
         onHealthLoss += HealthLost;
+
+        CurrentHealth = maxHealth;
     }
 
     // Fired Every time there is a health loss
