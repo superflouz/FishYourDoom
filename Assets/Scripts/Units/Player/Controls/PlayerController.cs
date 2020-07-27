@@ -64,7 +64,7 @@ public class PlayerController : MonoBehaviour
 
     // Fired by InputSystem
     public void OnAttack(InputValue value)
-    {              
+    {
         currentWeapon.Attack();
         animator.SetTrigger("Attack");
     }
@@ -73,24 +73,7 @@ public class PlayerController : MonoBehaviour
     public void OnSpecialAttack(InputValue value)
     {
         currentWeapon.SpecialAttack();
-        animator.SetTrigger("SpecialAttack");
-
-        if(currentWeapon.Type == Weapon.Types.FishingRod)
-        {
-            playerInput.SwitchCurrentActionMap("Hook");
-        }
-    }
-
-    // Fired by InputSystem
-    public void OnReel()
-    {
-        
-    }
-
-    // Fired by InputSystem
-    public void OnInstantReel()
-    {
-        playerInput.SwitchCurrentActionMap("Player");
+        animator.SetTrigger("SpecialAttack");       
     }
 
     // Fired by InputSystem
@@ -117,6 +100,10 @@ public class PlayerController : MonoBehaviour
     // Fired by InputSystem
     public void OnLook(InputValue value)
     {
+        // This if fixes the player input disable 
+        // When you disable the player input, it fires the mouse position at 0;0 
+        // This causes issues so we just don't affect the value when it's 0;0
+        if (value.Get<Vector2>() != Vector2.zero)
         cursorLook = value.Get<Vector2>();
     }
 

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class FishingRod : Weapon
 {
@@ -9,6 +10,8 @@ public class FishingRod : Weapon
     private Stats playerStats;
     private Animator playerAnimator;
     private Animator animator;
+    private PlayerInput playerInput;
+    private PlayerInput hookInput;
 
     private bool hookThrown;
     
@@ -18,14 +21,20 @@ public class FishingRod : Weapon
     public float throwStrenght;
     public float lineLenght;
 
+    private float ReelTimer;
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
         playerAnimator = player.GetComponent<Animator>();
+        hookInput = GetComponent<PlayerInput>();
+        playerInput = player.GetComponent<PlayerInput>();       
         playerStats = player.Stats;
 
         hookThrown = false;
         hook.player = player;
+
+        hookInput.currentActionMap.Disable();
     }
 
     void Start()
@@ -38,43 +47,72 @@ public class FishingRod : Weapon
         
     }
 
+    // Fired by InputSystem
+    public void OnReel()
+    {
+
+    }
+
+    // Fired by InputSystem
+    public void OnInstantReel()
+    {
+        HookSpecialAction();
+    }
+
+    // Fired by the player using this weapon
     public override void Attack()
     {
         // Set animation trigger
         animator.SetTrigger("Attack");
     }
 
+    // Fired by the player using this weapon
     public override void SpecialAttack()
+    {
+        HookSpecialAction();
+    }
+
+    private void HookSpecialAction()
     {
         if (hookThrown == false)
         {
             Vector2 v = Globals.DegreeToVector2(transform.parent.rotation.eulerAngles.z - 90);
-            ThrowHook(v);            
+            ThrowHook(v);
         }
         else if (hookThrown == true)
         {
-            RetrieveHook();           
+            RetrieveHook();
         }
-    }   
+    }
 
     private void ThrowHook(Vector2 direction)
     {
-        // Set animation trigger   
-        playerAnimator.SetBool("HookThrown", hookThrown);
+        playerInput.currentActionMap.Disable();
+        hookInput.currentActionMap.Enable();       
 
         hookThrown = true;
         hook.gameObject.SetActive(true);
-        hook.Throw(direction, throwStrenght);   
+        hook.Throw(direction, throwStrenght);
+
+        // Set animation trigger   
+        playerAnimator.SetBool("HookThrown", true);
     }
 
     private void RetrieveHook()
     {
-        // Set animation trigger
-        playerAnimator.SetBool("HookThrown", hookThrown);
+        hookInput.currentActionMap.Disable();
+        playerInput.currentActionMap.Enable();      
+
+        hookInput.currentActionMap.Disable();      
 
         hookThrown = false;
-        hook.gameObject.SetActive(false);   
-        
+        hook.gameObject.SetActive(false);
+
+        // Set animation trigger
+        playerAnimator.SetBool("HookThrown", false);
+
         // Reel in hook
+        
+        Debug.Log(Vector2.Distance(player.transform.position, hook.transform.position));
     }
 }
