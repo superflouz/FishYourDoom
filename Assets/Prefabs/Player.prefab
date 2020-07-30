@@ -50,7 +50,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 5135811925837281512}
+  pivot: {fileID: 6929284502228638685}
   hook: {fileID: 0}
+  hookBody: {fileID: 986738211}
   attackPower: 1
   attackSpeed: 1
   throwStrenght: 2
@@ -166,7 +168,7 @@ MonoBehaviour:
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: bd0c123b-3b94-459e-a99f-e8e68c544632
+  m_DefaultActionMap: Hook
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!1 &986738211
@@ -194,7 +196,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 986738211}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.72201824, y: 0.14167835, z: -32.493767}
+  m_LocalPosition: {x: 0.79, y: 0.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1885522332}
@@ -234,7 +236,7 @@ GameObject:
   - component: {fileID: 1885522333}
   - component: {fileID: 1885522334}
   - component: {fileID: 1885522335}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: DisplayHook
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -249,7 +251,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1885522331}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.06, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.38, z: 0}
   m_LocalScale: {x: 2, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 986738213}
@@ -294,8 +296,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 1, g: 0.7949656, b: 0.3301887, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 0d3ef093425086d4088ec39d7d8bfb8a, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -708,8 +710,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.5}
-  m_Size: {x: 0.5, y: 2}
+  m_Offset: {x: -1.9401034e-14, y: -0.8652263}
+  m_Size: {x: 0.49999684, y: 2.730413}
   m_Direction: 0
 --- !u!1 &4776687481221257091
 GameObject:

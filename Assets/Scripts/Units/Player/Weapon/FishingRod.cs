@@ -8,6 +8,7 @@ public class FishingRod : Weapon
     public Player player;
     public Transform pivot;
     public Hook hook;
+    public GameObject hookBody;
     private Stats playerStats;
     private Animator playerAnimator;
     private Animator animator;
@@ -76,6 +77,7 @@ public class FishingRod : Weapon
     {
         // Set animation trigger
         animator.SetTrigger("Attack");
+        animator.SetInteger("Angle", playerAnimator.GetInteger("Angle"));
     }
 
     // Fired by the player using this weapon
@@ -104,6 +106,8 @@ public class FishingRod : Weapon
 
         hookThrown = true;
         hook.gameObject.SetActive(true);
+        hookBody.SetActive(false);
+
         hook.Throw(direction, throwStrenght);
 
         // Set animation trigger   
@@ -128,5 +132,6 @@ public class FishingRod : Weapon
         isReeling = false;
         hookThrown = false;
         hook.gameObject.SetActive(false);
+        hookBody.SetActive(true);
     }
 }
