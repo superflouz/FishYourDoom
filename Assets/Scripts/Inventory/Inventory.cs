@@ -16,33 +16,37 @@ public class Inventory : MonoBehaviour
     private int numberOfCategories;
 
     private Transform inventory;
+    private Transform itemsPanel;
     private Transform navigationTabs;
     private Transform scrollBar;
 
-    public float spaceBetweenInventoryAndScrollBar = 0;
+    public float spaceBetweenItemsPanelAndScrollBar = 0;
 
     public uint numberOfColumns = 12;
     public uint defaultNumberofRows = 6;
     public float spaceBetweenColumns = 5;
     public float spaceBetweenRows = 5;
     public float border = 10;
+    public float maxScale = 1;
 
     void Awake()
     {
         inventory = transform.GetChild(0);
-        navigationTabs = transform.GetChild(1);
-        scrollBar = transform.GetChild(2);
+        itemsPanel = inventory.transform.GetChild(0);
+        navigationTabs = inventory.transform.GetChild(1);
+        scrollBar = inventory.transform.GetChild(2);
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        ResizePanelForItemGrid(inventory);
+        ResizePanelForItemGrid(itemsPanel);
 
         RectTransform scrollBarRectTransform = scrollBar.GetComponent<RectTransform>();
-        RectTransform inventoryRectTransform = inventory.GetComponent<RectTransform>();
-        scrollBarRectTransform.localPosition = new Vector2(inventoryRectTransform.rect.width / 2 + spaceBetweenInventoryAndScrollBar, 0);
-        scrollBarRectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, inventoryRectTransform.rect.height);
+        RectTransform itemsPanelRectTransform = itemsPanel.GetComponent<RectTransform>();
+        itemsPanelRectTransform.localPosition = new Vector2(itemsPanelRectTransform.localPosition.x, itemsPanelRectTransform.localPosition.y - inventoryTabPrefab.GetComponent<RectTransform>().rect.height / 2);
+        scrollBarRectTransform.localPosition = new Vector2(itemsPanelRectTransform.rect.width / 2 + spaceBetweenItemsPanelAndScrollBar, itemsPanelRectTransform.localPosition.y);
+        scrollBarRectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, itemsPanelRectTransform.rect.height);
 
         numberOfCategories = Enum.GetValues(typeof(Item.Category)).Length;
         itemLists = new List<Item>[numberOfCategories];
@@ -67,10 +71,9 @@ public class Inventory : MonoBehaviour
 
     public void Toggle()
     {
+        AutoScale();
         bool isActive = inventory.gameObject.activeSelf;
         inventory.gameObject.SetActive(!isActive);
-        navigationTabs.gameObject.SetActive(!isActive);
-        scrollBar.gameObject.SetActive(!isActive);
     }
 
     public void Add(Item item)
@@ -86,7 +89,7 @@ public class Inventory : MonoBehaviour
             itemInstance.Quantity = 1;
             itemInstance.GetComponent<RectTransform>().localPosition = ComputePositionOfItem(itemList.Count, (int)item.category);
             itemList.Add(itemInstance);
-            itemInstance.transform.SetParent(inventory.GetChild((int)item.category), false);
+            itemInstance.transform.SetParent(itemsPanel.GetChild((int)item.category), false);
         }
 
         itemInstance.UpdateText();
@@ -113,8 +116,8 @@ public class Inventory : MonoBehaviour
     public void ChangeActiveSubInventory(int categoryIndex)
     {
         HideAllSubInventory();
-        inventory.GetComponent<ScrollRect>().content = inventory.GetChild(categoryIndex).GetComponent<RectTransform>();
-        inventory.GetChild(categoryIndex).gameObject.SetActive(true);
+        itemsPanel.GetComponent<ScrollRect>().content = itemsPanel.GetChild(categoryIndex).GetComponent<RectTransform>();
+        itemsPanel.GetChild(categoryIndex).gameObject.SetActive(true);
     }
 
     public void ChangeActiveSubInventory(Item.Category category)
@@ -124,8 +127,8 @@ public class Inventory : MonoBehaviour
 
     public void HideAllSubInventory()
     {
-        for (int i = 0; i < inventory.childCount; i++) {
-            inventory.GetChild(i).gameObject.SetActive(false);
+        for (int i = 0; i < itemsPanel.childCount; i++) {
+            itemsPanel.GetChild(i).gameObject.SetActive(false);
         }
     }
 
@@ -133,7 +136,7 @@ public class Inventory : MonoBehaviour
     {
         string enumName = Enum.GetName(typeof(Item.Category), index);
 
-        GameObject subInventory = Instantiate(subInventoryPrefab, inventory);
+        GameObject subInventory = Instantiate(subInventoryPrefab, itemsPanel);
         subInventory.name = enumName;
 
         ResizePanelForItemGrid(subInventory.transform);
@@ -145,8 +148,8 @@ public class Inventory : MonoBehaviour
         //int currentLoopIndex = index; Previously required when used to define the onClick event inside of a loop with a lambda. Becuase of closure, a reference on the loop index was kept and the value used was one bigger than the conntrol value.
         string enumName = Enum.GetName(typeof(Item.Category), index);
 
-        Rect invRect = inventory.GetComponent<RectTransform>().rect;
-        Vector2 localPos = inventory.GetComponent<RectTransform>().localPosition;
+        Rect invRect = itemsPanel.GetComponent<RectTransform>().rect;
+        Vector2 localPos = itemsPanel.GetComponent<RectTransform>().localPosition;
         float buttonWidth = invRect.width / numberOfCategories;
         float buttonPosY = invRect.height / 2 + localPos.y;
         float buttonPosX = invRect.width / 2 * -1 + localPos.x;
@@ -166,25 +169,25 @@ public class Inventory : MonoBehaviour
     private Vector2 ComputePositionOfItem(int positionInList, int categoryIndex)
     {
         Rect itemRect= itemPrefab.GetComponent<RectTransform>().rect;
-        RectTransform inventoryRectTransform = inventory.GetChild(categoryIndex).GetComponent<RectTransform>();
+        RectTransform itemsPanelRectTransform = itemsPanel.GetChild(categoryIndex).GetComponent<RectTransform>();
 
         float x = border + (spaceBetweenColumns + itemRect.width) * (positionInList % numberOfColumns);
         float y = border + (spaceBetweenRows + itemRect.height) * (int)(positionInList / numberOfColumns);
 
         float minY = border + (itemRect.height + spaceBetweenRows) * (defaultNumberofRows - 1);
 
-        // Increase size of inventory if the current height is not enough for a new object
+        // Increase size of itemsPanel if the current height is not enough for a new object
         // Or reduce the size if its too tall but not more than the minimum size
-        if (inventoryRectTransform.rect.height - border < y + itemRect.height) {
-            inventoryRectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical,
-                inventoryRectTransform.rect.height + itemRect.height + spaceBetweenRows
+        if (itemsPanelRectTransform.rect.height - border < y + itemRect.height) {
+            itemsPanelRectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical,
+                itemsPanelRectTransform.rect.height + itemRect.height + spaceBetweenRows
                 //y + border + itemRect.height + spaceBetweenRows
             );
         } else if (positionInList % numberOfColumns == numberOfColumns - 1 && y >= minY
-            && inventoryRectTransform.rect.height - border - spaceBetweenRows > y + itemRect.height
+            && itemsPanelRectTransform.rect.height - border - spaceBetweenRows > y + itemRect.height
         ) {
-            inventoryRectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical,
-                inventoryRectTransform.rect.height - (itemRect.height + spaceBetweenRows)
+            itemsPanelRectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical,
+                itemsPanelRectTransform.rect.height - (itemRect.height + spaceBetweenRows)
                 //y + border + itemRect.height + (y != minY ? spaceBetweenRows : 0)
             );
         }
@@ -219,5 +222,29 @@ public class Inventory : MonoBehaviour
             Item item = itemList[i];
             item.GetComponent<RectTransform>().localPosition = ComputePositionOfItem(i, (int)item.category);
         }
+    }
+
+    private void AutoScale()
+    {
+        float canvasHeight = GetComponent<RectTransform>().rect.height;
+        float uiHeight = itemsPanel.GetComponent<RectTransform>().rect.height + inventoryTabPrefab.GetComponent<RectTransform>().rect.height * 2;
+
+        float canvasWidth = GetComponent<RectTransform>().rect.width;
+        float uiWidth = itemsPanel.GetComponent<RectTransform>().rect.width + scrollBar.GetComponent<RectTransform>().rect.width * 2;
+
+        float heightScale = canvasHeight / uiHeight;
+        float widthScale = canvasWidth / uiWidth;
+        float scale = heightScale < widthScale ? heightScale : widthScale;
+
+        if (scale < maxScale) {
+            Scale(scale);
+        } else {
+            Scale(maxScale);
+        }
+    }
+
+    private void Scale(float scale)
+    {
+        inventory.localScale = new Vector2(scale, scale);
     }
 }
