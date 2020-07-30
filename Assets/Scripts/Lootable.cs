@@ -31,25 +31,6 @@ public class Lootable : MonoBehaviour, IInteractive
 
     public WeightedObject GenerateLoot()
     {
-        // totalWeight could be stored globally and computed at Awake time.
-        // The current local usage allows for dynamic item pool.
-        uint totalWeight = 0;
-        foreach (WeightedObject loot in lootTable) {
-            totalWeight += loot.weight;
-        }
-
-        uint randomValue = (uint)Random.Range(0, (int)totalWeight);
-        uint currentWeightCheck = 0;
-        WeightedObject returnLoot = lootTable[0];
-
-        foreach (WeightedObject loot in lootTable) {
-            currentWeightCheck += loot.weight;
-
-            if (currentWeightCheck > randomValue) {
-                returnLoot = loot;
-                break;
-            }
-        }
-        return returnLoot;
+        return WOManager.Draw(lootTable);
     }
 }
