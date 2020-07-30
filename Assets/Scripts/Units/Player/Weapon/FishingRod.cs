@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class FishingRod : Weapon
 {
     public Player player;
+    public Transform pivot;
     public Hook hook;
     private Stats playerStats;
     private Animator playerAnimator;
@@ -22,6 +23,7 @@ public class FishingRod : Weapon
     public float lineLenght;
 
     private float ReelTimer;
+    private bool isReeling;
 
     private void Awake()
     {
@@ -31,6 +33,7 @@ public class FishingRod : Weapon
         playerInput = player.GetComponent<PlayerInput>();       
         playerStats = player.Stats;
 
+        isReeling = false;
         hookThrown = false;
         hook.player = player;
 
@@ -44,7 +47,16 @@ public class FishingRod : Weapon
 
     void Update()
     {
-        
+        if(ReelTimer > 0)
+        {
+            ReelTimer -= Time.deltaTime;
+
+            hook.transform.position = Vector2.MoveTowards(hook.transform.position, player.transform.position, 0.05f);
+        }
+        else if (isReeling)
+        {
+            HookFinishedReeling();            
+        }
     }
 
     // Fired by InputSystem
@@ -76,7 +88,7 @@ public class FishingRod : Weapon
     {
         if (hookThrown == false)
         {
-            Vector2 v = Globals.DegreeToVector2(transform.parent.rotation.eulerAngles.z - 90);
+            Vector2 v = Globals.DegreeToVector2(pivot.rotation.eulerAngles.z - 90);
             ThrowHook(v);
         }
         else if (hookThrown == true)
@@ -99,20 +111,22 @@ public class FishingRod : Weapon
     }
 
     private void RetrieveHook()
-    {
-        hookInput.currentActionMap.Disable();
-        playerInput.currentActionMap.Enable();      
-
-        hookInput.currentActionMap.Disable();      
-
-        hookThrown = false;
-        hook.gameObject.SetActive(false);
-
+    {       
         // Set animation trigger
         playerAnimator.SetBool("HookThrown", false);
 
         // Reel in hook
-        
-        Debug.Log(Vector2.Distance(player.transform.position, hook.transform.position));
+        ReelTimer = 0.4f;
+        isReeling = true;
+    }
+
+    private void HookFinishedReeling()
+    {
+        hookInput.currentActionMap.Disable();
+        playerInput.currentActionMap.Enable();
+
+        isReeling = false;
+        hookThrown = false;
+        hook.gameObject.SetActive(false);
     }
 }
