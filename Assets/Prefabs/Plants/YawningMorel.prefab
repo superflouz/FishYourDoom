@@ -54,6 +54,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3983012682988323917, guid: 220c496c4b5e4c581930dc9bc3b57d33,
         type: 3}
+    - target: {fileID: 1143067719831848687, guid: c618ce30bfab0304f86148bece2e3fde,
+        type: 3}
+      propertyPath: lootTable.Array.data[0].weight
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1143067719831848687, guid: c618ce30bfab0304f86148bece2e3fde,
+        type: 3}
+      propertyPath: lootTable.Array.data[0].objectPrefab
+      value: 
+      objectReference: {fileID: 6216777699816817945, guid: 220c496c4b5e4c581930dc9bc3b57d33,
+        type: 3}
     - target: {fileID: 5583412432632252745, guid: c618ce30bfab0304f86148bece2e3fde,
         type: 3}
       propertyPath: m_Sprite

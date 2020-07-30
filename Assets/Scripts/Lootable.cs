@@ -4,13 +4,7 @@ using UnityEngine;
 
 public class Lootable : MonoBehaviour, IInteractive
 {
-    [System.Serializable]
-    public struct Loot {
-        public uint dropWeight;
-        public Item itemPrefab;
-    }
-
-    public List<Loot> lootTable = new List<Loot>();
+    public List<WeightedObject> lootTable = new List<WeightedObject>();
 
     public uint lootCount = 1;
 
@@ -28,28 +22,28 @@ public class Lootable : MonoBehaviour, IInteractive
 
     public void Interact(Player player)
     {
-        player.Inventory.Add(GenerateLoot().itemPrefab);
+        player.Inventory.Add(GenerateLoot().objectPrefab);
         if (--lootCount <= 0) {
             Destroy(gameObject);
         }
     }
 
 
-    public Loot GenerateLoot()
+    public WeightedObject GenerateLoot()
     {
         // totalWeight could be stored globally and computed at Awake time.
         // The current local usage allows for dynamic item pool.
         uint totalWeight = 0;
-        foreach (Loot loot in lootTable) {
-            totalWeight += loot.dropWeight;
+        foreach (WeightedObject loot in lootTable) {
+            totalWeight += loot.weight;
         }
 
         uint randomValue = (uint)Random.Range(0, (int)totalWeight);
         uint currentWeightCheck = 0;
-        Loot returnLoot = lootTable[0];
+        WeightedObject returnLoot = lootTable[0];
 
-        foreach (Loot loot in lootTable) {
-            currentWeightCheck += loot.dropWeight;
+        foreach (WeightedObject loot in lootTable) {
+            currentWeightCheck += loot.weight;
 
             if (currentWeightCheck > randomValue) {
                 returnLoot = loot;

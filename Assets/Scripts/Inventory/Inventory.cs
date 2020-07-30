@@ -95,6 +95,16 @@ public class Inventory : MonoBehaviour
         itemInstance.UpdateText();
     }
 
+    public void Add(GameObject item)
+    {
+        Item itemComponent = item.GetComponent<Item>();
+        if (itemComponent == null) {
+            Debug.LogWarning("Tried to add an object without an \"Item\" component into the inventory.\n" + item);
+            return;
+        }
+        Add(itemComponent);
+    }
+
     public void Remove(Item item)
     {
         List<Item> itemList = itemLists[(int)item.category];
