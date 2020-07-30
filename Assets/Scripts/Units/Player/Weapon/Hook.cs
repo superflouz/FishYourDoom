@@ -29,6 +29,15 @@ public class Hook : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        
+        // Hook touched a creature
+        if(collision.gameObject.GetComponent<Creature>() != null)
+        {
+
+        }
+        // Hook touched a wall
+        else if(collision.gameObject.layer == LayerMask.NameToLayer("Wall"))
+        {
+
+        }
     }
 }

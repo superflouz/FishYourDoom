@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8970140390581061233}
   - component: {fileID: 7299228742332640567}
   - component: {fileID: 3762638799307713690}
+  - component: {fileID: 1360883988}
   m_Layer: 9
   m_Name: FishingRod
   m_TagString: Untagged
@@ -33,7 +34,7 @@ Transform:
   m_Children:
   - {fileID: 986738213}
   - {fileID: 2184927733409422805}
-  m_Father: {fileID: 6929284502228638685}
+  m_Father: {fileID: 1983057363178919428}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &918263359
@@ -49,7 +50,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 5135811925837281512}
+  pivot: {fileID: 6929284502228638685}
   hook: {fileID: 0}
+  hookBody: {fileID: 986738211}
   attackPower: 1
   attackSpeed: 1
   throwStrenght: 2
@@ -137,6 +140,37 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1360883988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 918263356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: ffc2a4d36488343418bedf6e21822be9,
+    type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Hook
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &986738211
 GameObject:
   m_ObjectHideFlags: 0
@@ -162,7 +196,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 986738211}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.72201824, y: 0.14167835, z: -32.493767}
+  m_LocalPosition: {x: 0.79, y: 0.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1885522332}
@@ -202,7 +236,7 @@ GameObject:
   - component: {fileID: 1885522333}
   - component: {fileID: 1885522334}
   - component: {fileID: 1885522335}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: DisplayHook
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -217,7 +251,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1885522331}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.06, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.38, z: 0}
   m_LocalScale: {x: 2, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 986738213}
@@ -262,8 +296,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 1, g: 0.7949656, b: 0.3301887, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 0d3ef093425086d4088ec39d7d8bfb8a, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -308,16 +342,16 @@ HingeJoint2D:
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 0
-  m_Anchor: {x: 0.001334459, y: 0.074732155}
-  m_ConnectedAnchor: {x: -0.057331085, y: 0.22419648}
+  m_Anchor: {x: 0, y: 0.12500001}
+  m_ConnectedAnchor: {x: 0, y: -0.0049999654}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 1
     m_MaximumMotorForce: 10000
   m_UseLimits: 0
   m_AngleLimits:
-    m_LowerAngle: 80
-    m_UpperAngle: 260
+    m_LowerAngle: 50
+    m_UpperAngle: 230
 --- !u!1 &536605054638564092
 GameObject:
   m_ObjectHideFlags: 0
@@ -355,6 +389,7 @@ Transform:
   m_Children:
   - {fileID: 7875754863048320241}
   - {fileID: 6929284502228638685}
+  - {fileID: 1983057363178919428}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -459,6 +494,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   threshHoldHealth: 10
+  currentHealth: 0
 --- !u!114 &5135811925837281511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -599,6 +635,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpriteSheetName: FishingRod
+--- !u!1 &2094858231358134963
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1983057363178919428}
+  m_Layer: 9
+  m_Name: Weapons
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1983057363178919428
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2094858231358134963}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 918263357}
+  m_Father: {fileID: 2661632752076957573}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3974488405061726836
 GameObject:
   m_ObjectHideFlags: 0
@@ -643,8 +710,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.5}
-  m_Size: {x: 0.5, y: 2}
+  m_Offset: {x: -1.9401034e-14, y: -0.8652263}
+  m_Size: {x: 0.49999684, y: 2.730413}
   m_Direction: 0
 --- !u!1 &4776687481221257091
 GameObject:
@@ -870,8 +937,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 918263357}
+  m_Children: []
   m_Father: {fileID: 2661632752076957573}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -13,4 +13,5 @@ public static class Globals
     {
         return RadianToVector2(degree * Mathf.Deg2Rad).normalized;
     }
+
 }
