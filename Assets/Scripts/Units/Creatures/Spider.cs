@@ -15,11 +15,11 @@ public class Spider : MonoBehaviour
 
     void Awake()
     {
-        animator = GetComponent<Animator>();
-        health = GetComponent<Health>();
-        fieldOfView = GetComponent<FieldOfView>();
-        creature = GetComponent<Creature>();
-        pivot = transform.Find("Pivot");
+        animator = transform.parent.GetComponent<Animator>();
+        health = transform.parent.GetComponent<Health>();
+        fieldOfView = transform.parent.GetComponent<FieldOfView>();
+        creature = transform.parent.GetComponent<Creature>();
+        pivot = transform.parent.Find("Pivot");
     }
 
     // Start is called before the first frame update
@@ -34,17 +34,26 @@ public class Spider : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (creature.aggro == null)
+        if (!webActive)
         {
-            foreach (Transform target in fieldOfView.visibleTargets)
+            if (creature.aggro == null)
             {
-                if (target.GetComponent<Player>())
-                    creature.aggro = target.gameObject;
+                foreach (Transform target in fieldOfView.visibleTargets)
+                {
+                    if (target.GetComponent<Player>() != null)
+                        creature.aggro = target.gameObject;
+                    else if (target.GetComponent<Creature>() != null)
+                    {
+                        Creature targetCreature = GetComponent<Creature>();
+                        if (targetCreature != null && targetCreature.creatureType == Creature.CreatureType.Small && targetCreature.creatureEating == Creature.CreatureEating.Herbivore)
+                            creature.aggro = target.gameObject;
+                    }
+                }
             }
-        }
-        else
-        {
-            creature.AttackAggro();
+            else
+            {
+                creature.AttackAggro();
+            }
         }
     }
 
