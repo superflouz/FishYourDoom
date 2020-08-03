@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 2260003767932247092, guid: 3dfd8ee58b4296f47908285e75b15f99,
         type: 3}
       propertyPath: m_Name
-      value: Spider
+      value: SpiderWeb
       objectReference: {fileID: 0}
     - target: {fileID: 2260003767932247095, guid: 3dfd8ee58b4296f47908285e75b15f99,
         type: 3}

@@ -270,6 +270,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -3438905571476058607, guid: b78720764047b1042a27b24cf11bda51,
         type: 3}
+    - target: {fileID: 1692423942571046924, guid: 7dddba46b34af0f4eb37fd57e9a87989,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4035816158521971660, guid: 7dddba46b34af0f4eb37fd57e9a87989,
         type: 3}
       propertyPath: m_Name
@@ -330,6 +335,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5419448338279945057, guid: 7dddba46b34af0f4eb37fd57e9a87989,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7489514837069584765, guid: 7dddba46b34af0f4eb37fd57e9a87989,
         type: 3}
       propertyPath: speed
@@ -343,6 +353,16 @@ PrefabInstance:
     - target: {fileID: 7489514837069584765, guid: 7dddba46b34af0f4eb37fd57e9a87989,
         type: 3}
       propertyPath: attackRange
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8269400869111973651, guid: 7dddba46b34af0f4eb37fd57e9a87989,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8269400869111973651, guid: 7dddba46b34af0f4eb37fd57e9a87989,
+        type: 3}
+      propertyPath: m_Simulated
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:

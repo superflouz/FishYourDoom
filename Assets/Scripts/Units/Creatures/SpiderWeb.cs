@@ -35,7 +35,12 @@ public class SpiderWeb : MonoBehaviour
 
             if (triggered)
             {
-                // Apply root to collider
+                CrowdControl prey = collision.GetComponent<CrowdControl>();
+                if (prey != null)
+                {
+                    prey.Stunned = true;
+                    prey.stunTimer = 3;
+                }
                 spider.PreyDetected(collision.gameObject);
                 spider.webActive = false;
             }

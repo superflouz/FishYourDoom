@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Creature : MonoBehaviour
+public class Creature : MonoBehaviour, ICrowdControllable
 {
     public enum CreatureType
     {
@@ -40,14 +40,27 @@ public class Creature : MonoBehaviour
 
     public bool Dead { get; private set; }
 
+
     private Rigidbody2D body;
     private Transform pivot;
     private Animator animator;
     private Health health;
     private FieldOfView fieldOfView;
+    private CrowdControl crowdControl;
 
     private float attackTimer;
 
+    public bool Stunned
+    {
+        set
+        {
+            crowdControl.Stunned = value;
+        }
+        get
+        {
+            return crowdControl.Stunned;
+        }
+    }
 
     // Start is called before the first frame update
     void Awake()
@@ -57,6 +70,7 @@ public class Creature : MonoBehaviour
         health = GetComponent<Health>();
         fieldOfView = GetComponent<FieldOfView>();
         pivot = transform.Find("Pivot");
+        crowdControl = GetComponent<CrowdControl>();
     }
 
     private void Start()
@@ -75,98 +89,116 @@ public class Creature : MonoBehaviour
 
     public void Wander()
     {
-        if (wanderTimer > 0)
+        if (!Stunned)
         {
-            wanderTimer -= Time.deltaTime;
-            if (wanderTimer <= 0)
-                pauseTimer = pauseTime;
-
-            Move(currentWanderDirection, wanderingSpeedRatio);
-        }
-
-        if (pauseTimer > 0)
-        {
-            pauseTimer -= Time.deltaTime;
-            if (pauseTimer <= 0)
+            if (wanderTimer > 0)
             {
-                Vector2 offsetWandering = Globals.DegreeToVector2(Random.Range(0f, 360f));
-                offsetWandering *= wanderingRadius;
-                offsetWandering += wanderingCenter;
+                wanderTimer -= Time.deltaTime;
+                if (wanderTimer <= 0)
+                    pauseTimer = pauseTime;
 
-                currentWanderDirection = (offsetWandering - (Vector2)transform.position).normalized;
-
-                wanderTimer = wanderTime;
+                Move(currentWanderDirection, wanderingSpeedRatio);
             }
 
-            Move(currentWanderDirection, 0);
+            if (pauseTimer > 0)
+            {
+                pauseTimer -= Time.deltaTime;
+                if (pauseTimer <= 0)
+                {
+                    Vector2 offsetWandering = Globals.DegreeToVector2(Random.Range(0f, 360f));
+                    offsetWandering *= wanderingRadius;
+                    offsetWandering += wanderingCenter;
+
+                    currentWanderDirection = (offsetWandering - (Vector2)transform.position).normalized;
+
+                    wanderTimer = wanderTime;
+                }
+
+                Move(currentWanderDirection, 0);
+            }
         }
+
     }
 
     public void Move(Vector2 direction, float magnitude)
     {
-        // Move it toward the input order
-        Vector2 velocity = Vector2.MoveTowards(body.velocity, direction * speed * magnitude, acceleration * Time.fixedDeltaTime);
-        body.velocity = velocity;
+        if (!Stunned)
+        {
+            // Move it toward the input order
+            Vector2 velocity = Vector2.MoveTowards(body.velocity, direction * speed * magnitude, acceleration * Time.fixedDeltaTime);
+            body.velocity = velocity;
 
-        animator.SetFloat("Speed", magnitude);
+            animator.SetFloat("Speed", magnitude);
 
 
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        pivot.rotation = Quaternion.AngleAxis(angle + 90, Vector3.forward);
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            pivot.rotation = Quaternion.AngleAxis(angle + 90, Vector3.forward);
 
-        float pivotAngle = pivot.eulerAngles.z;
+            float pivotAngle = pivot.eulerAngles.z;
 
-        if (pivotAngle >= 225 && pivotAngle <= 315)
-        { animator.SetInteger("Angle", 270); }
-        else if (pivotAngle > 135 && pivotAngle < 225)
-        { animator.SetInteger("Angle", 180); }
-        else if (pivotAngle >= 45 && pivotAngle <= 135)
-        { animator.SetInteger("Angle", 90); }
-        else if (pivotAngle > 315 || pivotAngle < 45)
-        { animator.SetInteger("Angle", 0); }
+            if (pivotAngle >= 225 && pivotAngle <= 315)
+            { animator.SetInteger("Angle", 270); }
+            else if (pivotAngle > 135 && pivotAngle < 225)
+            { animator.SetInteger("Angle", 180); }
+            else if (pivotAngle >= 45 && pivotAngle <= 135)
+            { animator.SetInteger("Angle", 90); }
+            else if (pivotAngle > 315 || pivotAngle < 45)
+            { animator.SetInteger("Angle", 0); }
+        }
+
     }
 
     public void AttackAggro()
     {
-        if (aggro != null)
+        if (!Stunned)
         {
-            Creature aggroCreature = aggro.GetComponent<Creature>();
-            if (aggroCreature)
+            if (aggro != null)
             {
-                if (aggroCreature.Dead)
+                Creature aggroCreature = aggro.GetComponent<Creature>();
+                if (aggroCreature)
                 {
-                    aggro = null;
+                    if (aggroCreature.Dead)
+                    {
+                        aggro = null;
+                    }
+                }
+            }
+
+            if (aggro != null && attackTimer <= 0)
+            {
+                if ((aggro.transform.position - transform.position).magnitude > attackRange)
+                {
+                    Move((aggro.transform.position - transform.position).normalized, 1);
+                }
+                else
+                {
+                    Move((aggro.transform.position - transform.position).normalized, 0);
+                    animator.SetTrigger("Attack");
+                    attackTimer = 1 / attackSpeed;
                 }
             }
         }
 
-        if (aggro != null && attackTimer <= 0)
-        {
-            if ((aggro.transform.position - transform.position).magnitude > attackRange)
-            {
-                Move((aggro.transform.position - transform.position).normalized, 1);
-            }
-            else
-            {
-                Move((aggro.transform.position - transform.position).normalized, 0);
-                animator.SetTrigger("Attack");
-                attackTimer = 1 / attackSpeed;
-            }
-        }
     }
 
     public void Attack()
     {
-        if (attackTimer <= 0)
+        if (!Stunned)
         {
-            animator.SetTrigger("Attack");
-            attackTimer = 1 / attackSpeed;
+            if (attackTimer <= 0)
+            {
+                animator.SetTrigger("Attack");
+                attackTimer = 1 / attackSpeed;
+            }
         }
+
     }
 
 
     private void OnDeath()
     {
+        Collider2D collider = GetComponent<Collider2D>();
+        collider.enabled = false;
         Dead = true;
         animator.SetTrigger("Die");
     }

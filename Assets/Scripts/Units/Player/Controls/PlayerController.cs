@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, ICrowdControllable
 { 
     // Player components
     public Weapon currentWeapon;
@@ -17,10 +17,23 @@ public class PlayerController : MonoBehaviour
     private Vector2 cursorLook;
     private Camera mainCam;
     private PlayerInput playerInput;
+    private CrowdControl crowdControl;
 
     // Movement variables
     public float speed = 5;
     public float acceleration = 100;
+
+    public bool Stunned
+    {
+        set
+        {
+            crowdControl.Stunned = value;
+        }
+        get
+        {
+            return crowdControl.Stunned;
+        }
+    }
 
     private void Awake()
     {
@@ -30,6 +43,7 @@ public class PlayerController : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
         pivot = transform.Find("Pivot");
         mainCam = Camera.main;
+        crowdControl = GetComponent<CrowdControl>();
     }
 
     void Start()
@@ -65,36 +79,49 @@ public class PlayerController : MonoBehaviour
     // Fired by InputSystem
     public void OnAttack(InputValue value)
     {
-        currentWeapon.Attack();
-        animator.SetTrigger("Attack");
+        if (!Stunned)
+        {
+            currentWeapon.Attack();
+            animator.SetTrigger("Attack");
+        }
     }
 
     // Fired by InputSystem
     public void OnSpecialAttack(InputValue value)
     {
-        currentWeapon.SpecialAttack();
-        animator.SetTrigger("SpecialAttack");       
+        if (!Stunned)
+        {
+            currentWeapon.SpecialAttack();
+            animator.SetTrigger("SpecialAttack");
+        }
     }
 
     // Fired by InputSystem
     public void OnInteract()
-    {       
-        Vector2 offset = Globals.DegreeToVector2(pivot.localRotation.eulerAngles.z - 90);
+    {
+        if (!Stunned)
+        {
+            Vector2 offset = Globals.DegreeToVector2(pivot.localRotation.eulerAngles.z - 90);
 
-        Collider2D[] hits = Physics2D.OverlapCircleAll((Vector2)transform.position + offset, 1, 1 << LayerMask.NameToLayer("Interactives"));
+            Collider2D[] hits = Physics2D.OverlapCircleAll((Vector2)transform.position + offset, 1, 1 << LayerMask.NameToLayer("Interactives"));
 
-        if (hits.Length > 0) {
-            hits[0].gameObject.GetComponent<IInteractive>()?.Interact(GameObject.Find("Player").GetComponent<Player>());
+            if (hits.Length > 0)
+            {
+                hits[0].gameObject.GetComponent<IInteractive>()?.Interact(GameObject.Find("Player").GetComponent<Player>());
+            }
         }
     }
 
     // Fired by InputSystem
     public void OnMove(InputValue value)
     {
-        // Retrieve value and affect moveInput
-        moveInput = value.Get<Vector2>();
-        if (moveInput.magnitude < 0.2)
-            moveInput = Vector2.zero;     
+        if (!Stunned)
+        {
+            // Retrieve value and affect moveInput
+            moveInput = value.Get<Vector2>();
+            if (moveInput.magnitude < 0.2)
+                moveInput = Vector2.zero;
+        }
     }
 
     // Fired by InputSystem
@@ -115,6 +142,11 @@ public class PlayerController : MonoBehaviour
     // Move the character
     private void Move()
     {
+        if (Stunned)
+        {
+            moveInput = Vector2.zero;
+        }
+
         // Move it toward the input order
         Vector2 velocity = Vector2.MoveTowards(body.velocity, moveInput * speed, acceleration * Time.fixedDeltaTime);
         body.velocity = velocity;

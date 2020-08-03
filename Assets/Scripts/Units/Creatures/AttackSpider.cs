@@ -15,7 +15,7 @@ public class AttackSpider : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!collision.GetComponent<Spider>())
+        if (!collision.transform.Find("Controls")?.GetComponent<Spider>())
         {
             Health health = collision.GetComponent<Health>();
             if (health != null)
