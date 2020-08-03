@@ -12,7 +12,14 @@ public class Creature : MonoBehaviour
         Big
     }
 
+    public enum CreatureEating
+    {
+        Carnivore,
+        Herbivore
+    }
+
     public CreatureType creatureType;
+    public CreatureEating creatureEating;
 
     public GameObject aggro;
     public float attackRange;
@@ -74,7 +81,7 @@ public class Creature : MonoBehaviour
             if (wanderTimer <= 0)
                 pauseTimer = pauseTime;
 
-            Move(currentWanderDirection, speed * wanderingSpeedRatio);
+            Move(currentWanderDirection, wanderingSpeedRatio);
         }
 
         if (pauseTimer > 0)
@@ -98,7 +105,7 @@ public class Creature : MonoBehaviour
     public void Move(Vector2 direction, float magnitude)
     {
         // Move it toward the input order
-        Vector2 velocity = Vector2.MoveTowards(body.velocity, direction * magnitude, acceleration * Time.fixedDeltaTime);
+        Vector2 velocity = Vector2.MoveTowards(body.velocity, direction * speed * magnitude, acceleration * Time.fixedDeltaTime);
         body.velocity = velocity;
 
         animator.SetFloat("Speed", magnitude);
@@ -137,7 +144,7 @@ public class Creature : MonoBehaviour
         {
             if ((aggro.transform.position - transform.position).magnitude > attackRange)
             {
-                Move((aggro.transform.position - transform.position).normalized, speed);
+                Move((aggro.transform.position - transform.position).normalized, 1);
             }
             else
             {

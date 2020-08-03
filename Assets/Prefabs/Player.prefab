@@ -195,8 +195,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 986738211}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.79, y: 0.4, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 0.39999995, y: -0.7900002, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1885522332}
@@ -676,6 +676,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2184927733409422805}
   - component: {fileID: 3152469572426689852}
+  - component: {fileID: 7701648316904904843}
   m_Layer: 9
   m_Name: Collider
   m_TagString: Untagged
@@ -713,6 +714,19 @@ CapsuleCollider2D:
   m_Offset: {x: -1.9401034e-14, y: -0.8652263}
   m_Size: {x: 0.49999684, y: 2.730413}
   m_Direction: 0
+--- !u!114 &7701648316904904843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3974488405061726836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be2b25c6e4dacb54895b730075134f7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
 --- !u!1 &4776687481221257091
 GameObject:
   m_ObjectHideFlags: 0

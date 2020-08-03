@@ -7,9 +7,9 @@ public class SpiderWeb : MonoBehaviour
     public Spider spider;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        spider = transform.parent.GetComponent<Spider>();
+        spider = transform.parent.Find("Controls").GetComponent<Spider>();
     }
 
     // Update is called once per frame
@@ -22,9 +22,23 @@ public class SpiderWeb : MonoBehaviour
     {
         if (spider.webActive)
         {
-            // Apply root to collider
-            spider.PreyDetected(collision.gameObject);
-            spider.webActive = false;
+            bool triggered = false;
+
+            if (collision.GetComponent<Player>() != null)
+                triggered = true;
+            else if (collision.GetComponent<Creature>() != null)
+            {
+                Creature targetCreature = collision.GetComponent<Creature>();
+                if (targetCreature != null && targetCreature.creatureType == Creature.CreatureType.Small && targetCreature.transform.Find("Controls")?.GetComponent<Spider>() == null)
+                    triggered = true;
+            }
+
+            if (triggered)
+            {
+                // Apply root to collider
+                spider.PreyDetected(collision.gameObject);
+                spider.webActive = false;
+            }
         }
     }
 }
