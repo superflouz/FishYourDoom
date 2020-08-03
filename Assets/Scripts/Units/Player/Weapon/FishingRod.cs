@@ -76,8 +76,8 @@ public class FishingRod : Weapon
     public override void Attack()
     {
         // Set animation trigger
-        animator.SetTrigger("Attack");
         animator.SetInteger("Angle", playerAnimator.GetInteger("Angle"));
+        animator.SetTrigger("Attack");
     }
 
     // Fired by the player using this weapon
@@ -119,7 +119,7 @@ public class FishingRod : Weapon
         // Set animation trigger
         playerAnimator.SetBool("HookThrown", false);
 
-        // Reel in hook
+        // Reel in hook (start minigame here I guess..?)
         ReelTimer = 0.4f;
         isReeling = true;
     }
@@ -129,6 +129,8 @@ public class FishingRod : Weapon
         hookInput.currentActionMap.Disable();
         playerInput.currentActionMap.Enable();
 
+
+        // (end minigame here I guess..?)
         isReeling = false;
         hookThrown = false;
         hook.gameObject.SetActive(false);
