@@ -390,6 +390,12 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "NoControls",
+            "id": "f3a46318-481f-426c-8b30-33ae0bdaa494",
+            "actions": [],
+            "bindings": []
         }
     ],
     "controlSchemes": [
