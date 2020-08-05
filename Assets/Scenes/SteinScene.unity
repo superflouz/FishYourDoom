@@ -43868,6 +43868,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4029081257801000887, guid: 9282f72f5b8b4444d9baa608899fc930,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4029081259526446225, guid: 9282f72f5b8b4444d9baa608899fc930,
         type: 3}
       propertyPath: m_Camera
@@ -43899,6 +43904,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8118932066935295982, guid: 9282f72f5b8b4444d9baa608899fc930,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8118932067236454243, guid: 9282f72f5b8b4444d9baa608899fc930,
         type: 3}
       propertyPath: m_SortingLayer
       value: 2
