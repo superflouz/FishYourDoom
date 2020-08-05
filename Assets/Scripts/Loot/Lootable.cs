@@ -7,6 +7,14 @@ public class Lootable : MonoBehaviour, IInteractive
     public List<WeightedObject> lootTable = new List<WeightedObject>();
 
     public uint lootCount = 1;
+    public float timeToLoot = 1;
+
+    private LootingManager lootingManager;
+
+    void Awake()
+    {
+        lootingManager = GameObject.Find("LootingManager").GetComponent<LootingManager>();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -22,10 +30,13 @@ public class Lootable : MonoBehaviour, IInteractive
 
     public void Interact(Player player)
     {
-        player.Inventory.Add(GenerateLoot().objectPrefab);
-        if (--lootCount <= 0) {
-            Destroy(gameObject);
-        }
+        System.Action loot = () => {
+            player.Inventory.Add(GenerateLoot().objectPrefab);
+            if (--lootCount <= 0) {
+                Destroy(gameObject);
+            }
+        };
+        lootingManager.Loot(this, loot);
     }
 
 
